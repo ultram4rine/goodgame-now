@@ -12,6 +12,77 @@ body{
     background-color: #0D1221;
     overflow: auto;
 }
+#style{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    font-size: 14px;
+    color: #739FD6;
+}
+input[type="radio"]{
+    margin-top: 5px;
+}
+#topbar{
+    width: 100%;
+    height: 22px;
+    background-color: #233056;
+    color: #739FD6;
+    font-family: -apple-system, Open Sans, sans-serif;
+    border-bottom: 0.5px solid black;
+}
+#user-info{
+    float: right;
+    font-size: 16px;
+}
+#leftbar{
+    width: 40px;
+    height: calc(100% - 22px - 1px);
+    float: left;
+    background-color: #233056;
+    border-right: 0.5px solid black;
+}
+.lbarcontent{
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: table-cell;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    font-size: 30px;
+    background-color: #1C2644;
+    color: white;
+    transition: 0.2s;
+}
+.lbarcontent:hover{
+    background-color: #52709C!important;
+}
+.icoheart{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+.icostar{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.icosets{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.icohelp{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.icoheart::before{
+    content: "\2764";
+}
+.icostar::before{
+    content: "\2605";
+}
+.icosets::before{
+    content: "\2699";
+}
+.icohelp::before{
+    content: "\FFFD";
+}
 .stream{
     width: 100%;
     min-height: 55px;
@@ -65,59 +136,4 @@ body{
     float: left;
     clear: left;
     font-size: 10px;
-}
-#topbar{
-    width: 100%;
-    height: 22px;
-    background-color: #233056;
-    color: #739FD6;
-    font-family: -apple-system, Open Sans, sans-serif;
-    border-bottom: 0.5px solid black;
-}
-#user-info{
-    float: right;
-    font-size: 16px;
-}
-#leftbar{
-    width: 40px;
-    height: calc(100% - 22px - 1px);
-    float: left;
-    background-color: #233056;
-    border-right: 0.5px solid black;
-}
-.lbarcontent{
-    width: 40px;
-    height: 40px;
-    float: left;
-    display: table-cell;
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 40px;
-    font-size: 30px;
-    background-color: #1C2644;
-    color: white;
-    transition: 0.2s;
-}
-.lbarcontent:hover{
-    background-color: #52709C;
-}
-.icoheart{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-}
-.icostar{
-    font-family: Arial, Helvetica, sans-serif;
-}
-.icohelp{
-    font-family: Arial, Helvetica, sans-serif;
-}
-.icoheart::before{
-    content: "\2764";
-}
-.icostar::before{
-    content: "\2605";
-}
-.icohelp::before{
-    content: "\FFFD";
 }
