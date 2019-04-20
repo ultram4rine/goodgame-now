@@ -40,8 +40,19 @@
     width: calc(100% - 5px);
     margin-left: 5px;
     float: left;
-    clear: left;
     font-size: 10px;
+}
+.name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline;
+}
+.viewers{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline;
 }
 .title{
     overflow: hidden;

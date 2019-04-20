@@ -12,7 +12,7 @@ $(document).ready(function(){
             var answer = JSON.parse(x.responseText);
             var count = Object.keys(answer.channels);
             for (var i = 0; i < 30; i++) {
-                content.innerHTML += '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/channel/' + answer.channels[i].key + '/#autoplay"><div id="' + i + '" class="stream"><img src="' + answer.channels[i].thumb + '"><div class="text"><div class="channame">' + answer.channels[i].key + '</div><div title="' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей" class="description">' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей</div><div title="' + answer.channels[i].title + '" class="title">' + answer.channels[i].title + '</div></div></div></a>';
+                content.innerHTML += '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/channel/' + answer.channels[i].key + '/#autoplay"><div id="' + i + '" class="stream"><img src="' + answer.channels[i].thumb + '"><div class="text"><div class="channame">' + answer.channels[i].key + '</div><div class="description" title="' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей"><div class="name">' + answer.channels[i].games.title + ' -&nbsp;</div><div class="viewers">' + answer.channels[i].viewers + ' зрителей</div></div><div title="' + answer.channels[i].title + '" class="title">' + answer.channels[i].title + '</div></div></div></a>';
             }
     
             var i = 30;
@@ -35,8 +35,7 @@ $(document).ready(function(){
                 var Cont = "";
                 for (var j = 0; j < 30; j++) {
                     if (i < count.length) {
-                        content.innerHTML += '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/channel/' + answer.channels[i].key + '/#autoplay"><div id="' + i + '" class="stream"><img src="' + answer.channels[i].thumb + '"><div class="text"><div class="channame">' + answer.channels[i].key + '</div><div title="' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей" class="description">' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей</div><div title="' + answer.channels[i].title + '" class="title">' + answer.channels[i].title + '</div></div></div></a>';
-                        //Cont += Row;
+                        content.innerHTML += '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/channel/' + answer.channels[i].key + '/#autoplay"><div id="' + i + '" class="stream"><img src="' + answer.channels[i].thumb + '"><div class="text"><div class="channame">' + answer.channels[i].key + '</div><div class="description" title="' + answer.channels[i].games.title + ' - ' + answer.channels[i].viewers + ' зрителей"><div class="name">' + answer.channels[i].games.title + ' -&nbsp;</div><div class="viewers">' + answer.channels[i].viewers + ' зрителей</div></div><div title="' + answer.channels[i].title + '" class="title">' + answer.channels[i].title + '</div></div></div></a>';
                         i++;
                     } else {
                         break;

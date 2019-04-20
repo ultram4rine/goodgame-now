@@ -6,7 +6,7 @@
     padding-bottom: 0px;
     font-family: -apple-system, Open Sans, sans-serif;
     color: #739FD6;
-    box-shadow: 0 0 70px rgba(0, 0, 0, 1);
+    box-shadow: 0 -50px 70px rgba(0, 0, 0, 1);
     transition: 0.3s;
 }
 .stream:hover{
@@ -48,6 +48,15 @@
     clear: left;
     font-size: 14px;
     color: #FFFFFF;
+    z-index: 1;
+}
+.name{
+    display: none;
+}
+.viewers{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
     z-index: 1;
 }
 .title{
