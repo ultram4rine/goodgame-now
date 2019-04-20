@@ -56,8 +56,6 @@
 .viewers{
     overflow: hidden;
     text-overflow: ellipsis;
-    position: absolute;
-    z-index: 1;
 }
 .title{
     overflow: hidden;
