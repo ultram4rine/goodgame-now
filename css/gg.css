@@ -36,6 +36,11 @@
     font-size: 18px;
     color: #63A0FA;
     z-index: 1;
+    transition: 0.3s;
+}
+.stream:hover .channame{
+    left: 15px;
+    bottom: 35px;
 }
 .description{
     overflow: hidden;
@@ -49,6 +54,11 @@
     font-size: 14px;
     color: #FFFFFF;
     z-index: 1;
+    transition: 0.3s;
+}
+.stream:hover .description{
+    left: 15px;
+    top: 10px;
 }
 .name{
     display: none;
@@ -56,6 +66,7 @@
 .viewers{
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: 0.3s;
 }
 .title{
     overflow: hidden;
@@ -69,4 +80,9 @@
     font-size: 14px;
     color: #FFFFFF;
     z-index: 1;
+    transition: 0.3s;
+}
+.stream:hover .title{
+    left: 15px;
+    bottom: 20px;
 }
