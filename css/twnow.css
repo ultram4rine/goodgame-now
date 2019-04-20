@@ -1,0 +1,55 @@
+.stream{
+    width: 100%;
+    min-height: 55px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    color: #739FD6;
+    border-bottom: 0.5px solid black;
+}
+.stream:hover{
+    background-color: #233056;
+}
+.stream img{
+    width: 80px;
+    height: 45px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.text{
+    white-space: nowrap;
+    margin-top: 5px;
+    width: calc(100% - 80px - 5px);
+    height: 45px;
+    float: left;
+}
+.channame{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    width: calc(100% - 5px);
+    margin-left: 5px;
+    float: left;
+    clear: left;
+    font-size: 14px;
+    color: #63A0FA;
+}
+.description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    width: calc(100% - 5px);
+    margin-left: 5px;
+    float: left;
+    clear: left;
+    font-size: 10px;
+}
+.title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    width: calc(100% - 5px);
+    margin-left: 5px;
+    float: left;
+    clear: left;
+    font-size: 10px;
+}
