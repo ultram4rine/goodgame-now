@@ -80,6 +80,3 @@ input[type="radio"]{
 .icosets::before{
     content: "\2699";
 }
-.icohelp::before{
-    content: "\FFFD";
-}
