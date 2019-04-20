@@ -15,10 +15,10 @@ $(document).ready(function(){
 
         $('input[type=radio][name=style]').change(function() {
             if (this.value == 'twitchnow') {
-                $('link[href=""]').attr('href', '../css/twnow.css');
+                $('#style[rel=stylesheet]').attr('href', '../css/twnow.css');
             }
             else if (this.value == 'goodgame') {
-                $('link[href=""]').attr('href', '../css/gg.css');
+                $('#style[rel=stylesheet]').attr('href', '../css/gg.css');
             }
             localStorage.setItem("style", this.value);
         });
