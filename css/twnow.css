@@ -3,7 +3,7 @@
     min-height: 55px;
     font-family: -apple-system, Open Sans, sans-serif;
     color: #739FD6;
-    border-bottom: 0.5px solid black;
+    border-bottom: 1px solid black;
 }
 .stream:hover{
     background-color: #233056;
