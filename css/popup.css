@@ -24,11 +24,34 @@ input[type="radio"]{
 }
 #topbar{
     width: 100%;
-    height: 22px;
+    height: 30px;
     background-color: #233056;
     color: #739FD6;
     font-family: -apple-system, Open Sans, sans-serif;
-    border-bottom: 0.5px solid black;
+    border-bottom: 1px solid black;
+}
+#filter{
+    width: 200px;
+    height: 28px;
+    margin-left: 10px;
+    background-color: #233056;
+    border: 1px solid #233056;;
+}
+#filter:hover{
+    border: 1px solid rgb(62, 77, 113);
+}
+#filter #search{
+    margin-top: 4.5px;
+    border: 0;
+    background-color: #233056;
+    color: white;
+}
+#filter #search:focus{
+    background-color: #0D1221;
+}
+#filter.focused{
+    background-color: #0D1221;
+    border: 1px solid #768ba9;
 }
 #user-info{
     float: right;
@@ -39,7 +62,7 @@ input[type="radio"]{
     height: calc(100% - 22px - 1px);
     float: left;
     background-color: #233056;
-    border-right: 0.5px solid black;
+    border-right: 1px solid black;
 }
 .lbarcontent{
     width: 40px;
@@ -58,6 +81,10 @@ input[type="radio"]{
 .lbarcontent:hover{
     background-color: #52709C!important;
 }
+.icosearch{
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .icoheart{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
@@ -70,6 +97,9 @@ input[type="radio"]{
 }
 .icohelp{
     font-family: Arial, Helvetica, sans-serif;
+}
+.icosearch::before{
+    content: "\1F50D";
 }
 .icoheart::before{
     content: "\2764";
