@@ -7,6 +7,17 @@ $(document).ready(function(){
         var x = new XMLHttpRequest();
         x.open("GET", "https://goodgame.ru/api/getggchannels", true);
         x.onload = function (){
+            var topbar = document.getElementById('topbar');
+            topbar.innerHTML = '';
+            topbar.innerHTML += '<div id="filter"><span class="icosearch"></span><input id="search" type="text"></div>';
+
+            $("#search").focusin(function(){
+                $("#filter").addClass("focused");
+            })
+            $("#search").focusout(function(){
+                $("#filter").removeClass("focused");
+            })
+
             var content = document.getElementById('content');
             content.innerHTML = '';
             var answer = JSON.parse(x.responseText);
