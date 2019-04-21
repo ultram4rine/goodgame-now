@@ -2,6 +2,15 @@
     "name": "GoodGame Reminder",
     "version": "1.0",
     "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [ "*://*/*" ],
+            "run_at": "document_end",
+            "js": [
+                "js/auth.js"
+            ]
+        }
+    ],
     "background": {
         "scripts": [
             "js/plugins/jQuery.js",
