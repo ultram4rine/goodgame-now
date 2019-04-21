@@ -3,7 +3,10 @@ $(document).ready(function(){
         var btn = $(this);
         btn.parent().children().css("background-color", "#1C2644");
         btn.css("background-color", "#52709C");
-        
+
+        var topbar = document.getElementById('topbar');
+        topbar.innerHTML = '';
+
         var content = document.getElementById('content');
         content.innerHTML = '';
         var value = localStorage.getItem("style");
