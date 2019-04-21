@@ -2,12 +2,21 @@
     "name": "GoodGame Reminder",
     "version": "1.0",
     "manifest_version": 2,
-    "content_scripts": [
-        {
-            "run_at": "document_start",
-            "matches": [ "*://*.goodgame.ru/*" ]
-        }
-    ],
+    "background": {
+        "scripts": [
+            "js/plugins/jQuery.js",
+            "js/fav.js",
+            "js/filter.js",
+            "js/sets.js",
+            "js/style.js",
+            "js/top.js"
+        ]
+    },
+    "icons": {
+        "16": "/icons/16.png",
+        "32": "/icons/32.png",
+        "64": "/icons/64.png"
+    },
     "browser_action": {
         "default_icons": {
             "16": "/icons/16.png",
