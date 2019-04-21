@@ -81,6 +81,30 @@ input[type="radio"]{
 .lbarcontent:hover{
     background-color: #52709C!important;
 }
+#unauth{
+    position: absolute;
+    font-family: -apple-system, Open Sans, sans-serif;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#unauth button{
+    width: 70px;
+    height: 35px;
+    margin-top: 3px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    font-size: 14px;
+    background-color: #394466;
+    color: #73adff;
+}
+#unauth button:hover{
+    color: #458EFF;
+}
 .icosearch{
     margin-left: 5px;
     font-family: Arial, Helvetica, sans-serif;
