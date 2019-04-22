@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    var value = localStorage.getItem("style");
+    var value = localStorage.getItem("ggnowstyle");
     if (value == null) {
         value = "twitchnow";
-        localStorage.setItem("style", value);
+        localStorage.setItem("ggnowstyle", value);
     }
     if (value == "twitchnow") {
         $('#style[rel=stylesheet]').attr('href', '../css/twnow.css');

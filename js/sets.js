@@ -23,7 +23,7 @@ $(document).ready(function(){
             else if (this.value == 'goodgame') {
                 $('#style[rel=stylesheet]').attr('href', '../css/gg.css');
             }
-            localStorage.setItem("style", this.value);
+            localStorage.setItem("ggnowstyle", this.value);
         });
     });
 });
