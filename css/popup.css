@@ -48,6 +48,7 @@ input[type="radio"]{
 }
 #filter #search:focus{
     background-color: #0D1221;
+    outline: none;
 }
 #filter.focused{
     background-color: #0D1221;
