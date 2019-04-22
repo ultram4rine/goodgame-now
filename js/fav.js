@@ -31,9 +31,6 @@ $(document).ready(function(){
 
             $('#login').click(function(){
                 window.open(addr, '_blank');
-                $('input[type="text"]').click(function(){
-                    window.open('google.com')
-                })
             })
         }
     });
