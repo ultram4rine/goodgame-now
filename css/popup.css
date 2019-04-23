@@ -13,14 +13,20 @@ body{
     overflow: auto;
 }
 #style{
-    margin-top: 5px;
-    margin-left: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
     font-family: -apple-system, Open Sans, sans-serif;
     font-size: 14px;
-    color: #739FD6;
+    color: white;
+}
+.sets{
+    border-bottom: 1px solid black;
 }
 input[type="radio"]{
     margin-top: 5px;
+}
+#style label{
+    color: #739FD6;
 }
 #topbar{
     width: 100%;
@@ -35,7 +41,7 @@ input[type="radio"]{
     height: 28px;
     margin-left: 10px;
     background-color: #233056;
-    border: 1px solid #233056;;
+    border: 1px solid #233056;
 }
 #filter:hover{
     border: 1px solid rgb(62, 77, 113);

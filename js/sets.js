@@ -11,9 +11,9 @@ $(document).ready(function(){
         content.innerHTML = '';
         var value = localStorage.getItem("ggnowstyle");
         if (value == "twitchnow") {
-            content.innerHTML += '<div id="style"><input type="radio" id="twitchnow" name="style" value="twitchnow" checked><label for="twitchnow">Twitch Now style</label><br><input type="radio" id="goodgame" name="style" value="goodgame"><label for="goodgame">GoodGame style</label></div>'
+            content.innerHTML += '<div id="style" class="sets">Стиль вкладок<br><input type="radio" id="twitchnow" name="style" value="twitchnow" checked><label for="twitchnow">Twitch Now style</label><input type="radio" id="goodgame" name="style" value="goodgame"><label for="goodgame">GoodGame style</label></div>'
         } else if (value == "goodgame") {
-            content.innerHTML += '<div id="style"><input type="radio" id="twitchnow" name="style" value="twitchnow"><label for="twitchnow">Twitch Now style</label><br><input type="radio" id="goodgame" name="style" value="goodgame" checked><label for="goodgame">GoodGame style</label></div>'
+            content.innerHTML += '<div id="style" class="sets">Стиль вкладок<br><input type="radio" id="twitchnow" name="style" value="twitchnow"><label for="twitchnow">Twitch Now style</label><input type="radio" id="goodgame" name="style" value="goodgame" checked><label for="goodgame">GoodGame style</label></div>'
         }
 
         $('input[type=radio][name=style]').change(function() {
