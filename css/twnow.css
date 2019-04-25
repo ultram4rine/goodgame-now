@@ -1,6 +1,7 @@
 .stream{
     width: 100%;
     min-height: 55px;
+    padding-bottom: 10px;
     font-family: -apple-system, Open Sans, sans-serif;
     color: #739FD6;
     border-bottom: 1px solid black;
@@ -12,13 +13,15 @@
     width: 80px;
     height: 45px;
     float: left;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid black;
 }
 .text{
     white-space: nowrap;
-    margin-top: 5px;
-    width: calc(100% - 80px - 5px);
+    margin-top: 10px;
+    margin-left: 5px;
+    width: calc(100% - 107px);
     height: 45px;
     float: left;
 }
@@ -27,10 +30,11 @@
     text-overflow: ellipsis;
     position: relative;
     width: calc(100% - 5px);
+    font-size: 13px;
     margin-left: 5px;
+    padding-bottom: 4px;
     float: left;
     clear: left;
-    font-size: 14px;
     color: #63A0FA;
 }
 .description{
@@ -39,8 +43,9 @@
     position: relative;
     width: calc(100% - 5px);
     margin-left: 5px;
+    padding-bottom: 4px;
     float: left;
-    font-size: 10px;
+    font-size: 11px;
 }
 .name{
     overflow: hidden;
@@ -62,5 +67,5 @@
     margin-left: 5px;
     float: left;
     clear: left;
-    font-size: 10px;
+    font-size: 11px;
 }
