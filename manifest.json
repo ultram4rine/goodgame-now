@@ -1,19 +1,11 @@
 {
-    "name": "GoodGame Reminder",
+    "name": "GoodGame Now",
     "version": "1.0",
     "manifest_version": 2,
-    "content_scripts": [
-        {
-            "matches": [ "*://*/*" ],
-            "run_at": "document_end",
-            "js": [
-                "js/auth.js"
-            ]
-        }
-    ],
     "background": {
         "scripts": [
             "js/plugins/jQuery.js",
+            "js/check.js",
             "js/fav.js",
             "js/filter.js",
             "js/sets.js",
@@ -35,8 +27,12 @@
         "default_popup": "html/popup.html"
     },
     "permissions": [
+        "background",
         "https://*/*",
         "http://*/*",
         "notifications"
+    ],
+    "web_accessible_resources": [
+        "64.png"
     ]
 }
