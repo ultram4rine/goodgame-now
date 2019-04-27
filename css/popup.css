@@ -64,9 +64,11 @@ input[type="radio"]{
 #leftbar{
     width: 40px;
     height: calc(100% - 22px - 1px);
+    position: relative;
     float: left;
     background-color: #233056;
     border-right: 1px solid black;
+    box-shadow: inset -5px 0 5px -4px black;
 }
 .lbarcontent{
     width: 40px;
@@ -81,6 +83,7 @@ input[type="radio"]{
     background-color: #1C2644;
     color: white;
     transition: 0.2s;
+    box-shadow: inset -5px 0 5px -4px black;
 }
 .lbarcontent:hover{
     background-color: #52709C!important;
