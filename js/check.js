@@ -33,6 +33,12 @@ var streams = [];
                         newstreams += diffRes[i] + '\n';
                     }
                 }
+                chrome.runtime.sendMessage({
+                    msg: "alive",
+                    data: {
+                        content: newstreams
+                    }
+                });
                 chrome.notifications.create({
                     "type": "basic",
                     "iconUrl": chrome.extension.getURL("../icons/64.png"),
@@ -40,6 +46,10 @@ var streams = [];
                     "message": newstreams
                 })
             }
+        } else if (x.status == 403) {
+            chrome.runtime.sendMessage({
+                msg: "unauth"
+            });
         }
     };
     setTimeout(notif, interval);
