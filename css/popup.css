@@ -25,6 +25,7 @@ body{
     border: 1px solid rgb(62, 77, 113);
 }
 #filter #search{
+    width: 150px;
     margin-top: 4.5px;
     border: 0;
     background-color: #233056;
@@ -123,6 +124,30 @@ body{
 #unauth button:active{
     outline: none;
 }
+#nonactive{
+    margin-top: 10px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    color: white;
+    text-align: center;
+}
+#nonactive button{
+    width: 70px;
+    height: 35px;
+    margin-top: 3px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    font-size: 14px;
+    background-color: #394466;
+    color: #73adff;
+}
+#nonactive button:hover{
+    color: #458EFF;
+}
+#nonactive button:active{
+    outline: none;
+}
 .sets{
     min-height: 35px;
     padding: 10px 20px;
@@ -159,9 +184,6 @@ input[type=range] {
     -webkit-appearance: none;
     width: 80%;
     background: transparent;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
 }
 input[type=range]:focus {
     outline: none;
