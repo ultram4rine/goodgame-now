@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(document).on("input",function(ev){
+    $(document).on("input[id=search]",function(ev){
         if ($(ev.target).val().length > 0) {
             var name = $(ev.target).val();
             $('a div[name]').hide();
