@@ -124,6 +124,7 @@ body{
     outline: none;
 }
 .sets{
+    min-height: 35px;
     padding: 10px 20px;
     font-family: -apple-system, Open Sans, sans-serif;
     font-size: 14px;
