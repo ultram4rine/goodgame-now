@@ -4,6 +4,7 @@ var streams = [];
     var time = localStorage.getItem("ggnowtimeupdate");
     var itime = parseInt(time);
     var interval = itime * 60 * 1000;
+    var k = 0;
     var x = new XMLHttpRequest();
     var streamsprev = streams;
     streams = [];
@@ -13,13 +14,16 @@ var streams = [];
     x.onload = function (){
         if (x.status == 200) {
             var answer = JSON.parse(x.responseText);
-            var k = 0;
             for (var i = 0; i < answer.length; i++) {
                 if (answer[i].status == true) {
                     streams[i] = answer[i].streamer.nickname;
                     k++;
-                    chrome.browserAction.setBadgeText({text: "" + k});
                 }
+            }
+            if (k > 0) {
+                chrome.browserAction.setBadgeText({text: "" + k});
+            } else {
+                chrome.browserAction.setBadgeText({text: ""});
             }
             diffRes = diff(streams, streamsprev);
             if (streams.length != 0 && !compare(streams, streamsprev) && !streamsprev.some(r=> diffRes.indexOf(r) >= 0)) {
