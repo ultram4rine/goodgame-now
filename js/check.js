@@ -19,9 +19,9 @@ x.onload = function (){
             }
         }
         if (streams != '' && streams != streamsprev) {
-            browser.notifications.create({
+            chrome.notifications.create({
                 "type": "basic",
-                "iconUrl": browser.extension.getURL("../icons/64.png"),
+                "iconUrl": chrome.extension.getURL("../icons/64.png"),
                 "title": "GoodGame Now",
                 "message": streams
             })
@@ -47,10 +47,12 @@ setInterval(function notif(){
                 }
             }
             if (streams != '' && streams != streamsprev) {
-                var notification = new Notification(
-                    streams,
-                    {icon: "../icons/64.png"}
-                )
+                chrome.notifications.create({
+                    "type": "basic",
+                    "iconUrl": chrome.extension.getURL("../icons/64.png"),
+                    "title": "GoodGame Now",
+                    "message": streams
+                })
             }
         }
     };
