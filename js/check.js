@@ -26,6 +26,13 @@ var streams = [];
                 chrome.browserAction.setBadgeText({text: ""});
             }
             diffRes = diff(streams, streamsprev);
+            chrome.runtime.onMessage.addListener(
+                function(response, sender, sendResponse) {
+                    if (response.msg == "get") {
+                        sendResponse(streams);
+                    }
+                }
+            );
             if (streams.length != 0 && !compare(streams, streamsprev) && !streamsprev.some(r=> diffRes.indexOf(r) >= 0)) {
                 var newstreams = '';
                 for (var i = 0; i < diffRes.length; i++) {
@@ -33,12 +40,6 @@ var streams = [];
                         newstreams += diffRes[i] + '\n';
                     }
                 }
-                chrome.runtime.sendMessage({
-                    msg: "alive",
-                    data: {
-                        content: newstreams
-                    }
-                });
                 chrome.notifications.create({
                     "type": "basic",
                     "iconUrl": chrome.extension.getURL("../icons/64.png"),
@@ -46,10 +47,6 @@ var streams = [];
                     "message": newstreams
                 })
             }
-        } else if (x.status == 403) {
-            chrome.runtime.sendMessage({
-                msg: "unauth"
-            });
         }
     };
     setTimeout(notif, interval);
