@@ -39,6 +39,49 @@ body{
     background-color: #0D1221;
     border: 1px solid #768ba9;
 }
+#pages{
+    width: 53px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+    float: right;
+    font-size: 14px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    background-color: #233056;
+    color: #73ADFF;
+}
+#pages #prev{
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    margin-top: 2.5px;
+    border-radius: 50%;
+    background-color: #21273B;
+}
+#pages #next{
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    float: right;
+    margin-top: 2.5px;
+    border-radius: 50%;
+    background-color: #21273B;
+}
+#pages #prev:hover{
+    background-color: #2E354C;
+    color: #4F98FF;
+}
+#pages #next:hover{
+    background-color: #2E354C;
+    color: #4F98FF;
+}
 #userbar{
     vertical-align: middle;
     width: 100px;
