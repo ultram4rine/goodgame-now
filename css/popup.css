@@ -95,7 +95,8 @@ body{
     position: relative;
     float: right;
     background-color: #0D1221;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 #unauth{
     position: absolute;
