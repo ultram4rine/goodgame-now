@@ -9,9 +9,13 @@ $(document).ready(function(){
         btn.parent().children().css("background-color", "#1C2644");
         btn.css("background-color", "#52709C");
 
-        if ($('#nostreams').length > 0){
+        if ($('#nostreams').length > 0) {
             $("#filter").css("display", "none");
+        } else {
+            $("#filter").css("display", "block");
         }
+        $('#offline').css("display", "none");
+        $('#nonactive').css("display", "block");
 
         var favs = $('#favorite');
         favs.parent().children().css("display", "none");
