@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $(document).on("input[id=search]",function(ev){
+    $(document).on("input", "#search", function(ev){
         if ($(ev.target).val().length > 0) {
             var name = $(ev.target).val();
             $('a div[name]').hide();
-            $('[name^=' + name + ']').show();
+            $('a div[name^=' + name + ']').show();
         } else {
             $('a div[name]').show();
         }
