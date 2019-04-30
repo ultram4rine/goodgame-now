@@ -42,6 +42,12 @@ $(document).ready(function(){
                 }
                 online.html(active);
                 offline.html(nonactive);
+
+                $(".stream").sort(function (a, b) {
+                    var contentA = parseInt($(a).find(".viewers").text());
+                    var contentB = parseInt($(b).find(".viewers").text());
+                    return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
+                }).appendTo('#online');
             } else if (x.status == 403) {
                 $("#filter").css("display", "none");
                 $("#userbar").css("display", "none");
