@@ -24,7 +24,7 @@ $(document).ready(function(){
                 xhr.onload = function () {
                     var user = JSON.parse(xhr.responseText);
                     userbar = $('#userbar');
-                    userbar.html('<img src=https://static.goodgame.ru' + user.avatar + '><divid="nickname">' + user.username + '</div>');
+                    userbar.html('<img src=https://static.goodgame.ru' + user.avatar + '><div id="nickname">' + user.username + '</div>');
                 }
                 var answer = JSON.parse(x.responseText);
                 for (var i = 0; i < answer.length; i++) {
