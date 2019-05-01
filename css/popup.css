@@ -141,6 +141,21 @@ body{
     overflow-y: auto;
     overflow-x: hidden;
 }
+#content::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+#content::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+#content::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+#content::-webkit-scrollbar-thumb {
+    min-height: 63px;
+    width: 10px;
+    border-radius: 7px;
+    background-color: rgba(60, 64, 73, 0.5);
+}
 #unauth{
     position: absolute;
     font-family: -apple-system, Open Sans, sans-serif;
