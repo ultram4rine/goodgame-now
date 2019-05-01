@@ -1,4 +1,5 @@
 .stream{
+    cursor: pointer;
     width: 100%;
     min-height: 55px;
     padding-bottom: 10px;

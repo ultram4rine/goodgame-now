@@ -197,6 +197,7 @@ body{
     width: 100%;
 }
 #offline .inactive{
+    cursor: pointer;
     width: 100%;
     height: 55px;
     line-height: 55px;
