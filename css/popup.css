@@ -219,9 +219,14 @@ body{
     border: 1px solid rgb(62, 77, 113);
 }
 #offline .inactive .nickname{
-    width: calc(100% - 52px);
+    width: auto;
     margin-left: 5px;
     float: left;
+}
+#offline .inactive .start{
+    margin-right: 10px;
+    float: right;
+    color: #43B85B;
 }
 #nonactive{
     margin-top: 10px;

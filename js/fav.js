@@ -31,7 +31,38 @@ $(document).ready(function(){
                     if (answer[i].streamer.nickname == streams[i]) {
                         active += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '#autoplay"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="stream"><img src="http:' + answer[i].preview + '"><div class="text"><div class="channame">' + answer[i].streamer.nickname + '</div><div class="description" title="' + answer[i].game + ' - ' + answer[i].viewers + ' зрителей"><div class="name">' + answer[i].game + ' -&nbsp;</div><div class="viewers">' + answer[i].viewers + ' зрителей</div></div><div title="' + answer[i].title + '" class="title">' + answer[i].title + '</div></div></div></a>'
                     } else if (answer[i].status == false) {
-                        nonactive += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="inactive"><img src="https://static.goodgame.ru' + answer[i].streamer.avatar + '"><div class="nickname">' + answer[i].streamer.nickname + '</div></div></a>'
+                        if (answer[i].broadcast == false) {
+                            nonactive += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="inactive"><img src="https://static.goodgame.ru' + answer[i].streamer.avatar + '"><div class="nickname">' + answer[i].streamer.nickname + '</div></div></a>'
+                        } else {
+                            var day = '';
+                            var today = new Date();
+                            var date = new Date(+answer[i].broadcast.start * 1000);
+                            if (today.getDay() == date.getDay()) {
+                                day = "Сегодня в ";
+                            } else if (today.getDay() == date.getDay() + 1) {
+                                day = "Завтра в ";
+                            } else {
+                                var d = date.getDate().toString();
+                                if (d.length == 1) {
+                                    d = "0" + d;
+                                }
+                                var m = date.getMonth() + 1;
+                                var month = m.toString();
+                                if (month.length == 1) {
+                                    month = "0" + month;
+                                }
+                                day = d + "." + month + " в ";
+                            }
+                            var hour = date.getHours().toString();
+                            if (hour.length == 1) {
+                                hour = "0" + hour;
+                            }
+                            var minutes = date.getMinutes().toString();
+                            if (minutes.length == 1) {
+                                minutes = minutes + "0";
+                            }
+                            nonactive += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="inactive"><img src="https://static.goodgame.ru' + answer[i].streamer.avatar + '"><div class="nickname">' + answer[i].streamer.nickname + '</div><div class="start">' + day + hour + ':' + minutes + '</div></div></a>'
+                        }
                     }
                 }
                 if (active == '') {
