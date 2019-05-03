@@ -5,6 +5,7 @@ $(document).ready(function(){
         btn.css("background-color", "#52709C");
 
         $("#filter").css("display", "none");
+        $("#pages").css("display", "none");
 
         var sets = $('#settings');
         sets.parent().children().css("display", "none");

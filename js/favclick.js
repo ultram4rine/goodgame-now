@@ -14,6 +14,7 @@ $(document).ready(function(){
         } else {
             $("#filter").css("display", "block");
         }
+        $('#pages').css("display", "none");
         $('#offline').css("display", "none");
         $('#nonactive').css("display", "block");
 
