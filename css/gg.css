@@ -1,7 +1,7 @@
 a{
     cursor: default;
 }
-.stream{
+#stream{
     min-height: 200px;
     cursor: pointer;
     position: relative;
@@ -13,13 +13,13 @@ a{
     color: #739FD6;
     transition: 0.3s;
 }
-.stream:hover{
+#stream:hover{
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
 }
-.stream::before{
+#stream::before{
     cursor: pointer;
     content: "";
     position: absolute;
@@ -30,13 +30,13 @@ a{
     box-shadow: inset 0px -90px 70px -60px rgba(0, 0, 0, 1), inset 30px 30px 70px -30px rgba(0, 0, 0, 1);
     transition: 0.3s;
 }
-.stream:hover:before{
+#stream:hover:before{
     top: 5px;
 	left: 5px;
 	right: 5px;
 	bottom: 5px;
 }
-.stream img{
+#stream img{
     width: 100%;
 }
 .text{

@@ -73,7 +73,7 @@ function tops(i, pagecount){
             var answertop = JSON.parse(x.responseText);
             for (var i = 0; i < answertop.streams.length; i++) {
                 if (answertop.streams[i].status != false) {
-                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="' + i + '" name="' + answertop.streams[i].streamer + '" class="stream"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers">' + answertop.streams[i].viewers + ' зрителей</div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
+                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers">' + answertop.streams[i].viewers + ' зрителей</div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
                 }
             }
             wrap.html(content)

@@ -1,4 +1,4 @@
-.stream{
+#stream{
     cursor: pointer;
     width: 100%;
     min-height: 55px;
@@ -7,10 +7,10 @@
     color: #739FD6;
     border-bottom: 1px solid black;
 }
-.stream:hover{
+#stream:hover{
     background-color: #233056;
 }
-.stream img{
+#stream img{
     width: 80px;
     height: 45px;
     float: left;
