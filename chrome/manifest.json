@@ -1,6 +1,6 @@
 {
     "name": "GoodGame Now",
-    "version": "1.0.1",
+    "version": "1.0.1.1",
     "manifest_version": 2,
     "description": "Track your favorite streamers on GoodGame.ru and get notifications when they come online",
     "background": {
