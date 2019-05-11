@@ -353,6 +353,9 @@ input[type=range]::-moz-range-track {
 .icostar::before{
     content: "\e9d9";
 }
+.icocup::before{
+    content: "\e99e";
+}
 .icosets::before{
     content: "\e994";
 }
