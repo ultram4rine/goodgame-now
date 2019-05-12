@@ -16,7 +16,12 @@ $(document).ready(function(){
         }
         $('#pages').css("display", "none");
         $('#offline').css("display", "none");
-        $('#nonactive').css("display", "block");
+        if ($('#unauth').css("display") == "none") {
+            $('#nonactive').css("display", "block");
+        } else {
+            $('#nonactive').css("display", "none");
+        }
+        
 
         var favs = $('#favorite');
         favs.parent().children().css("display", "none");
