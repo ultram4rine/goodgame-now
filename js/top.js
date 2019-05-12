@@ -76,7 +76,24 @@ function tops(i, pagecount){
                     content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers">' + answertop.streams[i].viewers + ' зрителей</div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
                 }
             }
+            if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {
+                content = content.replaceAll(' зрителей', '');
+                var i = content.indexOf('class="viewers"');
+                while (i !== -1) {
+                    content = content.splice(i+16, 0, '<span class="icoviewers"></span>');
+                    var i = content.indexOf('class="viewers"', i+1);
+                }
+            }
             wrap.html(content)
         }
     }
 }
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+String.prototype.splice = function(start, delCount, newSubStr) {
+    return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
+};

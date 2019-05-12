@@ -344,8 +344,15 @@ input[type=range]::-moz-range-track {
 .icosearch{
     margin-left: 7px;
 }
+.icoviewers{
+    font-family: icomoon;
+    margin-right: 5px;
+}
 .icosearch::before{
     content: "\e986";
+}
+.icoviewers::before{
+    content: "\e972";
 }
 .icoheart::before{
     content: "\e9da";
