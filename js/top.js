@@ -73,7 +73,24 @@ function tops(i, pagecount){
             var answertop = JSON.parse(x.responseText);
             for (var i = 0; i < answertop.streams.length; i++) {
                 if (answertop.streams[i].status != false) {
-                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers">' + answertop.streams[i].viewers + ' зрителей</div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
+                    if (answertop.streams[i].viewers.toString().length == 2 && answertop.streams[i].viewers.toString().charAt(0) == "1") {
+                        var views = " зрителей";
+                    } else {
+                        switch (answertop.streams[i].viewers.toString().slice(-1)) {
+                            case "1": 
+                                var views = " зритель";
+                                break;
+                            case "2":
+                            case "3":
+                            case "4": 
+                                var views = " зрителя";
+                                break;
+                            default:
+                                var views = " зрителей";
+                        }
+                    }
+
+                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers">' + answertop.streams[i].viewers + views + '</div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
                 }
             }
             if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {

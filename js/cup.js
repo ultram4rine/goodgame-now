@@ -28,7 +28,7 @@ $(document).ready(function(){
                     }
 
                     if (answercups.cups[i].participants_type == "1") {
-                        if (answercups.cups[i].participants.toString().length == 2) {
+                        if (answercups.cups[i].participants.toString().length == 2 && answercups.cups[i].participants.toString().charAt(0) == "1") {
                             var parts = answercups.cups[i].participants + " игроков";
                         } else {
                             switch (answercups.cups[i].participants.toString().slice(-1)) {
@@ -45,7 +45,7 @@ $(document).ready(function(){
                             }
                         }
                     } else if (answercups.cups[i].participants_type == "2") {
-                        if (answercups.cups[i].participants.toString().length == 2) {
+                        if (answercups.cups[i].participants.toString().length == 2 && answercups.cups[i].participants.toString().charAt(0) == "1") {
                             var parts = answercups.cups[i].participants + " команд";
                         } else {
                             switch (answercups.cups[i].participants.toString().slice(-1)) {

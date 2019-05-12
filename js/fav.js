@@ -29,7 +29,24 @@ $(document).ready(function(){
                 var answer = JSON.parse(x.responseText);
                 for (var i = 0; i < answer.length; i++) {
                     if (answer[i].streamer.nickname == streams[i]) {
-                        active += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '#autoplay"><div id="stream" name="' + answer[i].streamer.nickname + '"><img src="http:' + answer[i].preview + '"><div class="text"><div class="channame">' + answer[i].streamer.nickname + '</div><div class="description" title="' + answer[i].game + ' - ' + answer[i].viewers + ' зрителей"><div class="name">' + answer[i].game + ' -&nbsp;</div><div class="viewers">' + answer[i].viewers + ' зрителей</div></div><div title="' + answer[i].title + '" class="title">' + answer[i].title + '</div></div></div></a>'
+                        if (answer[i].viewers.toString().length == 2 && answer[i].viewers.toString().charAt(0) == "1") {
+                            var views = " зрителей";
+                        } else {
+                            switch (answercups.cups[i].participants.toString().slice(-1)) {
+                                case "1": 
+                                    var views = " зритель";
+                                    break;
+                                case "2":
+                                case "3":
+                                case "4": 
+                                    var views = " зрителя";
+                                    break;
+                                default:
+                                    var views = " зрителей";
+                            }
+                        }
+
+                        active += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '#autoplay"><div id="stream" name="' + answer[i].streamer.nickname + '"><img src="http:' + answer[i].preview + '"><div class="text"><div class="channame">' + answer[i].streamer.nickname + '</div><div class="description" title="' + answer[i].game + ' - ' + answer[i].viewers + views + '"><div class="name">' + answer[i].game + ' -&nbsp;</div><div class="viewers">' + answer[i].viewers + views + '</div></div><div title="' + answer[i].title + '" class="title">' + answer[i].title + '</div></div></div></a>'
                     } else if (answer[i].status == false) {
                         if (answer[i].broadcast == false) {
                             nonactive += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="inactive"><img src="https://static.goodgame.ru' + answer[i].streamer.avatar + '"><div class="nickname">' + answer[i].streamer.nickname + '</div></div></a>'
@@ -63,6 +80,14 @@ $(document).ready(function(){
                             }
                             nonactive += '<a target="_blank" rel="noopener noreferrer" href="' + answer[i].link + '"><div id="' + i + '" name="' + answer[i].streamer.nickname + '" class="inactive"><img src="https://static.goodgame.ru' + answer[i].streamer.avatar + '"><div class="nickname">' + answer[i].streamer.nickname + '</div><div class="start">' + day + hour + ':' + minutes + '</div></div></a>'
                         }
+                    }
+                }
+                if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {
+                    active = active.replaceAll(' зрителей', '');
+                    var i = active.indexOf('class="viewers"');
+                    while (i !== -1) {
+                        active = active.splice(i+16, 0, '<span class="icoviewers"></span>');
+                        var i = active.indexOf('class="viewers"', i+1);
                     }
                 }
                 if (active == '') {
