@@ -32,7 +32,7 @@ $(document).ready(function(){
                         if (answer[i].viewers.toString().length == 2 && answer[i].viewers.toString().charAt(0) == "1") {
                             var views = " зрителей";
                         } else {
-                            switch (answercups.cups[i].participants.toString().slice(-1)) {
+                            switch (answer[i].viewers.toString().slice(-1)) {
                                 case "1": 
                                     var views = " зритель";
                                     break;
