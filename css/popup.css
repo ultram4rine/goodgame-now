@@ -255,6 +255,86 @@ body{
 #nonactive button:active{
     outline: none;
 }
+#tournaments a{
+    text-decoration: none;
+    width: 100%;
+}
+#tournaments #opens{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    font-size: 22px;
+    color: #B8D5FF;
+}
+#cups{
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+    cursor: pointer;
+    width: 267px;
+    height: auto;
+    min-height: 190px;
+    font-family: -apple-system, Open Sans, sans-serif;
+}
+.stripe{
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    margin-left: -10px;
+    margin-top: -15px;
+    width: 327px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+}
+.flag{
+    position: absolute;
+    top: 5px;
+    right: -20px;
+    display: block;
+    margin: 0;
+    background: none;
+}
+#cuptitle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-family: -apple-system, Open Sans, sans-serif;
+    font-size: 14px;
+    color: white;
+}
+#cupdesc{
+    margin-top: 10px;
+    margin-right: 5px;
+    float: right;
+    font-family: -apple-system, Open Sans, sans-serif;
+    width: calc(100% - 20px - 267px - 10px);
+    height: 100%;
+}
+.cupd{
+    color: #5D5D6E;
+    font-size: 10px;
+}
+.cuptime{
+    color: white;
+    font-size: 14px;
+}
+.cupgame{
+    color: white;
+    font-size: 12px;
+}
+.cupaward{
+    color: #FA963E;
+    font-size: 14px;
+}
+.cupplaces{
+    color: white;
+    font-size: 14px;
+}
+.cupparts{
+    color: white;
+    font-size: 12px;
+}
 .sets{
     min-height: 35px;
     padding: 10px 20px;
@@ -340,6 +420,9 @@ input[type=range]::-moz-range-track {
 }
 #val {
     margin-top: 5px;
+}
+.rub-sign::before{
+    content: "\0020BD";
 }
 .icosearch{
     margin-left: 7px;
