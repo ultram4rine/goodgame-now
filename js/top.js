@@ -22,6 +22,10 @@ function tops(i, pagecount){
         next.css('cursor', 'pointer');
         next.css('color', '#73ADFF');
         next.css('background-color', '#21273B');
+        next.hover(
+            function(){ $(this).addClass('hover') },
+            function(){ $(this).removeClass('hover') }
+        )
         next.click(function(){
             i++;
             $('#topstreams').html('');
@@ -37,6 +41,10 @@ function tops(i, pagecount){
         prev.css('cursor', 'pointer');
         prev.css('color', '#73ADFF');
         prev.css('background-color', '#21273B');
+        prev.hover(
+            function(){ $(this).addClass('hover') },
+            function(){ $(this).removeClass('hover') }
+        )
         prev.click(function(){
             i--;
             $('#topstreams').html('');
@@ -47,6 +55,10 @@ function tops(i, pagecount){
         next.css('cursor', 'pointer');
         next.css('color', '#73ADFF');
         next.css('background-color', '#21273B');
+        next.hover(
+            function(){ $(this).addClass('hover') },
+            function(){ $(this).removeClass('hover') }
+        )
         next.click(function(){
             i++;
             $('#topstreams').html('');
@@ -57,6 +69,10 @@ function tops(i, pagecount){
         prev.css('cursor', 'pointer');
         prev.css('color', '#73ADFF');
         prev.css('background-color', '#21273B');
+        prev.hover(
+            function(){ $(this).addClass('hover') },
+            function(){ $(this).removeClass('hover') }
+        )
         prev.click(function(){
             i--;
             $('#topstreams').html('');

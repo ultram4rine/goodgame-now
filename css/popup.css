@@ -48,7 +48,8 @@ body{
     margin-right: 20px;
     float: right;
     font-size: 14px;
-    font-family: -apple-system, Open Sans, sans-serif;
+    font-family: icomoon;
+    font-size: 18px;
     background-color: #233056;
     color: #73ADFF;
 }
@@ -76,13 +77,9 @@ body{
     border-radius: 50%;
     background-color: #21273B;
 }
-#pages #prev:hover{
-    background-color: #2E354C;
-    color: #4F98FF;
-}
-#pages #next:hover{
-    background-color: #2E354C;
-    color: #4F98FF;
+#pages .hover{
+    background-color: #2E354C !important;
+    color: #4F98FF !important;
 }
 #userbar{
     vertical-align: middle;
