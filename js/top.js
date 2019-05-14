@@ -95,6 +95,8 @@ function tops(i, pagecount){
             }
             if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {
                 content = content.replaceAll(' зрителей', '');
+                content = content.replaceAll(' зритель', '');
+                content = content.replaceAll(' зрителя', '');
                 var i = content.indexOf('class="viewers"');
                 while (i !== -1) {
                     content = content.splice(i+16, 0, '<span class="icoviewers"></span>');

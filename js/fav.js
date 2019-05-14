@@ -84,6 +84,8 @@ $(document).ready(function(){
                 }
                 if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {
                     active = active.replaceAll(' зрителей', '');
+                    active = active.replaceAll(' зритель', '');
+                    active = active.replaceAll(' зрителя', '');
                     var i = active.indexOf('class="viewers"');
                     while (i !== -1) {
                         active = active.splice(i+16, 0, '<span class="icoviewers"></span>');
