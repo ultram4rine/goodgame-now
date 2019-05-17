@@ -12,72 +12,82 @@ $(document).ready(function(){
 function tops(i, pagecount){
     prev = $('#prev');
     next = $('#next');
-    if (i == 1) {
-        prev.off("click");
-        prev.css('cursor', 'default');
-        prev.css('color', '#ACACAC');
-        prev.css('background-color', '#2F323D');
-
-        next.off("click");
-        next.css('cursor', 'pointer');
-        next.css('color', '#73ADFF');
-        next.css('background-color', '#21273B');
-        next.hover(
-            function(){ $(this).addClass('hover') },
-            function(){ $(this).removeClass('hover') }
-        )
-        next.click(function(){
-            i++;
-            $('#topstreams').html('');
-            tops(i, pagecount);
-        });
-    } else if (i == pagecount) {
-        next.off("click");
-        next.css('cursor', 'default');
-        next.css('color', '#ACACAC');
-        next.css('background-color', '#2F323D');
-
-        prev.off("click");
-        prev.css('cursor', 'pointer');
-        prev.css('color', '#73ADFF');
-        prev.css('background-color', '#21273B');
-        prev.hover(
-            function(){ $(this).addClass('hover') },
-            function(){ $(this).removeClass('hover') }
-        )
-        prev.click(function(){
-            i--;
-            $('#topstreams').html('');
-            tops(i, pagecount);
-        });
-    } else {
-        next.off("click");
-        next.css('cursor', 'pointer');
-        next.css('color', '#73ADFF');
-        next.css('background-color', '#21273B');
-        next.hover(
-            function(){ $(this).addClass('hover') },
-            function(){ $(this).removeClass('hover') }
-        )
-        next.click(function(){
-            i++;
-            $('#topstreams').html('');
-            tops(i, pagecount);
-        });
-
-        prev.off("click");
-        prev.css('cursor', 'pointer');
-        prev.css('color', '#73ADFF');
-        prev.css('background-color', '#21273B');
-        prev.hover(
-            function(){ $(this).addClass('hover') },
-            function(){ $(this).removeClass('hover') }
-        )
-        prev.click(function(){
-            i--;
-            $('#topstreams').html('');
-            tops(i, pagecount);
-        });
+    switch (i) {
+        case 1: {
+            prev.off("click");
+            prev.css('cursor', 'default');
+            prev.css('color', '#ACACAC');
+            prev.css('background-color', '#2F323D');
+            prev.unbind('mouseenter mouseleave');
+            prev.removeClass('hover');
+    
+            next.off("click");
+            next.css('cursor', 'pointer');
+            next.css('color', '#73ADFF');
+            next.css('background-color', '#21273B');
+            next.hover(
+                function(){ $(this).addClass('hover') },
+                function(){ $(this).removeClass('hover') }
+            )
+            next.click(function(){
+                i++;
+                $('#topstreams').html('');
+                tops(i, pagecount);
+            });
+        }
+        break;
+        case pagecount: {
+            next.off("click");
+            next.css('cursor', 'default');
+            next.css('color', '#ACACAC');
+            next.css('background-color', '#2F323D');
+            next.unbind('mouseenter mouseleave');
+            next.removeClass('hover');
+    
+            prev.off("click");
+            prev.css('cursor', 'pointer');
+            prev.css('color', '#73ADFF');
+            prev.css('background-color', '#21273B');
+            prev.hover(
+                function(){ $(this).addClass('hover') },
+                function(){ $(this).removeClass('hover') }
+            )
+            prev.click(function(){
+                i--;
+                $('#topstreams').html('');
+                tops(i, pagecount);
+            });
+        }
+        break;
+        default: {
+            next.off("click");
+            next.css('cursor', 'pointer');
+            next.css('color', '#73ADFF');
+            next.css('background-color', '#21273B');
+            next.hover(
+                function(){ $(this).addClass('hover') },
+                function(){ $(this).removeClass('hover') }
+            )
+            next.click(function(){
+                i++;
+                $('#topstreams').html('');
+                tops(i, pagecount);
+            });
+    
+            prev.off("click");
+            prev.css('cursor', 'pointer');
+            prev.css('color', '#73ADFF');
+            prev.css('background-color', '#21273B');
+            prev.hover(
+                function(){ $(this).addClass('hover') },
+                function(){ $(this).removeClass('hover') }
+            )
+            prev.click(function(){
+                i--;
+                $('#topstreams').html('');
+                tops(i, pagecount);
+            });
+        }
     }
     var x = new XMLHttpRequest();
     x.open("GET", "https://goodgame.ru/api/4/stream?page=" + i + "/", true);
