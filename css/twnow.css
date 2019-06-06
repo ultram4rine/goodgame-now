@@ -60,6 +60,9 @@
     position: relative;
     display: inline;
 }
+.icoviewers{
+    display: none;
+}
 .title{
     overflow: hidden;
     text-overflow: ellipsis;

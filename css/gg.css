@@ -89,6 +89,16 @@ a{
     text-overflow: ellipsis;
     transition: 0.3s;
 }
+.views{
+    display: none;
+}
+.icoviewers{
+    font-family: icomoon;
+    margin-right: 5px;
+}
+.icoviewers::before{
+    content: "\e972";
+}
 .title{
     overflow: hidden;
     text-overflow: ellipsis;
