@@ -119,16 +119,6 @@ function tops(i, pagecount){
                     content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers"><span class="icoviewers"></span>' + answertop.streams[i].viewers + '<span class="views">' + views + '</span></div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
                 }
             }
-            /*if ($('#style[rel=stylesheet]').attr('href') == '../css/gg.css') {
-                content = content.replaceAll(' зрителей', '');
-                content = content.replaceAll(' зритель', '');
-                content = content.replaceAll(' зрителя', '');
-                var i = content.indexOf('class="viewers"');
-                while (i !== -1) {
-                    content = content.splice(i+16, 0, '<span class="icoviewers"></span>');
-                    var i = content.indexOf('class="viewers"', i+1);
-                }
-            }*/
             wrap.html(content)
         }
     }
