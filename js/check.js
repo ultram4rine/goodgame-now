@@ -22,7 +22,7 @@ var streams = [];
             }
             if (k > 0) {
                 chrome.browserAction.setBadgeText({text: "" + k});
-                chrome.browserAction.setBadgeBackgroundColor({color: "#233056"});
+                chrome.browserAction.setBadgeBackgroundColor({color: "#3b5191"});
             } else {
                 chrome.browserAction.setBadgeText({text: ""});
             }
