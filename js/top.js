@@ -90,7 +90,7 @@ function tops(i, pagecount){
         }
     }
     var x = new XMLHttpRequest();
-    x.open("GET", "https://goodgame.ru/api/4/stream?page=" + i + "/", true);
+    x.open("GET", "https://goodgame.ru/api/4/streams?page=" + i + "/", true);
     x.send()
     x.onload = function (){
         if (x.status == 200) {
@@ -116,7 +116,7 @@ function tops(i, pagecount){
                         }
                     }
 
-                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer + '</div><div class="description"><div class="viewers"><span class="icoviewers"></span>' + answertop.streams[i].viewers + '<span class="views">' + views + '</span></div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
+                    content += '<a target="_blank" rel="noopener noreferrer" href="' + answertop.streams[i].link + '#autoplay"><div id="stream" name="' + answertop.streams[i].streamer + '"><img src="http:' + answertop.streams[i].preview + '"><div class="text"><div class="channame">' + answertop.streams[i].streamer.username + '</div><div class="description" title="' + answertop.streams[i].game.title + ' - ' + answertop.streams[i].viewers + views + '"><div class="name">' + answertop.streams[i].game.title + ' -&nbsp;</div><div class="viewers"><span class="icoviewers"></span>' + answertop.streams[i].viewers + '<span class="views">' + views + '</span></div></div><div title="' + answertop.streams[i].title + '" class="title">' + answertop.streams[i].title + '</div></div></div></a>'
                 }
             }
             wrap.html(content)
