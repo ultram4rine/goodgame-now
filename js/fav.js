@@ -84,9 +84,6 @@ $(document).ready(function(){
                 }
                 if (active == '') {
                     active = '<div id="nostreams">Нет активных каналов</div>'
-                    $("#filter").css("display", "none");
-                } else {
-                    $("#filter").css("display", "block");
                 }
                 online.html(active);
                 offline.html(nonactive);
