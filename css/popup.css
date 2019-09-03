@@ -428,6 +428,8 @@ input[type="range"]::-moz-range-track {
   content: "\0020BD";
 }
 .icorefresh {
+  display: block;
+  transform-origin: 8px 9.5px;
   cursor: pointer;
   font-family: icomoon;
   font-size: 16px;

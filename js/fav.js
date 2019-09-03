@@ -180,5 +180,19 @@ $(document).ready(function() {
     });
   })();
 
-  $("#refresh").click(favs);
+  $("#refresh").click(function() {
+    $({ deg: 0 }).animate(
+      { deg: 360 },
+      {
+        duration: 200,
+        step: function(now) {
+          $(".icorefresh").css({
+            transform: "rotate(" + now + "deg)"
+          });
+        }
+      }
+    );
+
+    //favs();
+  });
 });
