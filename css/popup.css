@@ -1,463 +1,463 @@
-body{
-    margin: 0;
-    width: 440px;
-    height: 590px;
-    overflow: hidden;
+body {
+  margin: 0;
+  width: 440px;
+  height: 590px;
+  overflow: hidden;
 }
-#topbar{
-    position: relative;
-    width: 100%;
-    height: 30px;
-    background-color: #233056;
-    color: #739FD6;
-    font-family: -apple-system, Open Sans, sans-serif;
-    border-bottom: 1px solid black;
+#topbar {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #233056;
+  color: #739fd6;
+  font-family: -apple-system, Open Sans, sans-serif;
+  border-bottom: 1px solid black;
 }
-#refresh{
-    width: 20px;
-    position: absolute;
-    margin-top: 5px;
-    margin-left: 170px;
+#refresh {
+  width: 20px;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 170px;
 }
-#filter{
-    width: 150px;
-    height: 27px;
-    float: left;
-    margin-left: 10px;
-    font-family: icomoon;
-    color: white;
-    background-color: #233056;
-    border: 1px solid #233056;
+#filter {
+  width: 150px;
+  height: 27px;
+  float: left;
+  margin-left: 10px;
+  font-family: icomoon;
+  color: white;
+  background-color: #233056;
+  border: 1px solid #233056;
 }
-#filter:hover{
-    border: 1px solid rgb(62, 77, 113);
+#filter:hover {
+  border: 1px solid rgb(62, 77, 113);
 }
-#filter #search{
-    width: 100px;
-    margin-top: 4.5px;
-    border: 0;
-    background-color: #233056;
-    color: white;
+#filter #search {
+  width: 100px;
+  margin-top: 4.5px;
+  border: 0;
+  background-color: #233056;
+  color: white;
 }
-#filter #search:focus{
-    background-color: #0D1221;
-    outline: none;
+#filter #search:focus {
+  background-color: #0d1221;
+  outline: none;
 }
-#filter.focused{
-    background-color: #0D1221;
-    border: 1px solid #768ba9;
+#filter.focused {
+  background-color: #0d1221;
+  border: 1px solid #768ba9;
 }
-#pages{
-    width: 53px;
-    height: 30px;
-    line-height: 30px;
-    margin-right: 20px;
-    float: right;
-    font-size: 14px;
-    font-family: icomoon;
-    font-size: 18px;
-    background-color: #233056;
-    color: #73ADFF;
+#pages {
+  width: 53px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 20px;
+  float: right;
+  font-size: 14px;
+  font-family: icomoon;
+  font-size: 18px;
+  background-color: #233056;
+  color: #73adff;
 }
-#pages #prev{
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    float: left;
-    margin-top: 2.5px;
-    border-radius: 50%;
-    background-color: #21273B;
+#pages #prev {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  float: left;
+  margin-top: 2.5px;
+  border-radius: 50%;
+  background-color: #21273b;
 }
-#pages #next{
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    float: right;
-    margin-top: 2.5px;
-    border-radius: 50%;
-    background-color: #21273B;
+#pages #next {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  float: right;
+  margin-top: 2.5px;
+  border-radius: 50%;
+  background-color: #21273b;
 }
-#pages .hover{
-    background-color: #2E354C !important;
-    color: #4F98FF !important;
+#pages .hover {
+  background-color: #2e354c !important;
+  color: #4f98ff !important;
 }
-#userbar{
-    vertical-align: middle;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    float: right;
-    font-size: 12px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    color: #63A0FA;
-    padding: 1px 0 0 0;
-    margin: -1px auto 0 auto;
+#userbar {
+  vertical-align: middle;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  float: right;
+  font-size: 12px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: #63a0fa;
+  padding: 1px 0 0 0;
+  margin: -1px auto 0 auto;
 }
-#userbar img{
-    margin: 5px 5px 0 0;
-    width: 20px;
-    height: 20px;
-    float: left;
+#userbar img {
+  margin: 5px 5px 0 0;
+  width: 20px;
+  height: 20px;
+  float: left;
 }
-#uservar #nickname{
-    width: 70px;
-    height: 30px;
-    margin-left: 25px;
+#uservar #nickname {
+  width: 70px;
+  height: 30px;
+  margin-left: 25px;
 }
-#leftbar{
-    width: 40px;
-    height: calc(100% - 22px - 1px);
-    position: relative;
-    float: left;
-    background-color: #233056;
-    border-right: 1px solid black;
-    box-shadow: inset -5px 0 5px -4px black;
+#leftbar {
+  width: 40px;
+  height: calc(100% - 22px - 1px);
+  position: relative;
+  float: left;
+  background-color: #233056;
+  border-right: 1px solid black;
+  box-shadow: inset -5px 0 5px -4px black;
 }
-.lbarcontent{
-    width: 40px;
-    height: 40px;
-    float: left;
-    display: table-cell;
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 40px;
-    font-family: icomoon;
-    font-size: 22px;
-    background-color: #1C2644;
-    color: white;
-    transition: 0.2s;
-    box-shadow: inset -5px 0 5px -4px black;
+.lbarcontent {
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: table-cell;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  font-family: icomoon;
+  font-size: 22px;
+  background-color: #1c2644;
+  color: white;
+  transition: 0.2s;
+  box-shadow: inset -5px 0 5px -4px black;
 }
-.lbarcontent:hover{
-    background-color: #52709C!important;
+.lbarcontent:hover {
+  background-color: #52709c !important;
 }
-#content{
-    width: calc(100% - 40px - 1px);
-    height: calc(100% - 22px - 1px);
-    position: relative;
-    float: right;
-    background-color: #0D1221;
-    overflow-y: auto;
-    overflow-x: hidden;
+#content {
+  width: calc(100% - 40px - 1px);
+  height: calc(100% - 22px - 1px);
+  position: relative;
+  float: right;
+  background-color: #0d1221;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #content::-webkit-scrollbar {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 #content::-webkit-scrollbar:vertical {
-    width: 11px;
+  width: 11px;
 }
 #content::-webkit-scrollbar:horizontal {
-    height: 11px;
+  height: 11px;
 }
 #content::-webkit-scrollbar-thumb {
-    min-height: 63px;
-    width: 10px;
-    border-radius: 7px;
-    background-color: rgba(60, 64, 73, 0.5);
+  min-height: 63px;
+  width: 10px;
+  border-radius: 7px;
+  background-color: rgba(60, 64, 73, 0.5);
 }
-#unauth{
-    position: absolute;
-    font-family: -apple-system, Open Sans, sans-serif;
-    color: white;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#unauth {
+  position: absolute;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-#unauth button{
-    width: 70px;
-    height: 35px;
-    margin-top: 3px;
-    cursor: pointer;
-    border: 0;
-    border-radius: 2px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    background-color: #394466;
-    color: #73adff;
+#unauth button {
+  width: 70px;
+  height: 35px;
+  margin-top: 3px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
 }
-#unauth button:hover{
-    color: #458EFF;
+#unauth button:hover {
+  color: #458eff;
 }
-#unauth button:active{
-    outline: none;
+#unauth button:active {
+  outline: none;
 }
-#nostreams{
-    text-align: center;
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    color: white;
-    border-bottom: 1px solid black;
+#nostreams {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1px solid black;
 }
-#offline{
-    width: 100%;
+#offline {
+  width: 100%;
 }
-#offline .inactive{
-    cursor: pointer;
-    width: 100%;
-    height: 55px;
-    line-height: 55px;
-    border-bottom: 1px solid black;
-    text-decoration: none;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    color: #63A0FA;
+#offline .inactive {
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: #63a0fa;
 }
-#offline .inactive:hover{
-    background-color: #2E3A58;
+#offline .inactive:hover {
+  background-color: #2e3a58;
 }
-#offline .inactive img{
-    width: 35px;
-    height: 35px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-    border: 1px solid rgb(62, 77, 113);
+#offline .inactive img {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid rgb(62, 77, 113);
 }
-#offline .inactive .nickname{
-    width: auto;
-    margin-left: 5px;
-    float: left;
+#offline .inactive .nickname {
+  width: auto;
+  margin-left: 5px;
+  float: left;
 }
-#offline .inactive .start{
-    margin-right: 10px;
-    float: right;
-    color: #43B85B;
+#offline .inactive .start {
+  margin-right: 10px;
+  float: right;
+  color: #43b85b;
 }
-#nonactive{
-    margin-top: 10px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    color: white;
-    text-align: center;
+#nonactive {
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
 }
-#nonactive button{
-    width: 70px;
-    height: 35px;
-    margin-top: 3px;
-    cursor: pointer;
-    border: 0;
-    border-radius: 2px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    background-color: #394466;
-    color: #73adff;
+#nonactive button {
+  width: 70px;
+  height: 35px;
+  margin-top: 3px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
 }
-#nonactive button:hover{
-    color: #458EFF;
+#nonactive button:hover {
+  color: #458eff;
 }
-#nonactive button:active{
-    outline: none;
+#nonactive button:active {
+  outline: none;
 }
-#tournaments a{
-    text-decoration: none;
-    width: 100%;
+#tournaments a {
+  text-decoration: none;
+  width: 100%;
 }
-#tournaments #opens{
-    margin-left: 10px;
-    margin-top: 10px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 22px;
-    color: #B8D5FF;
+#tournaments #opens {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 22px;
+  color: #b8d5ff;
 }
-#cups{
-    margin-left: 20px;
-    margin-top: 10px;
-    float: left;
-    cursor: pointer;
-    width: 267px;
-    height: auto;
-    min-height: 190px;
-    font-family: -apple-system, Open Sans, sans-serif;
+#cups {
+  margin-left: 20px;
+  margin-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 267px;
+  height: auto;
+  min-height: 190px;
+  font-family: -apple-system, Open Sans, sans-serif;
 }
-.stripe{
-    cursor: pointer;
-    white-space: nowrap;
-    position: relative;
-    margin-left: -10px;
-    margin-top: -15px;
-    width: 327px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 2px;
+.stripe {
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  margin-left: -10px;
+  margin-top: -15px;
+  width: 327px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px;
 }
-.flag{
-    position: absolute;
-    top: 5px;
-    right: -20px;
-    display: block;
-    margin: 0;
-    background: none;
+.flag {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  display: block;
+  margin: 0;
+  background: none;
 }
-#cuptitle{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    color: white;
+#cuptitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
 }
-#cupdesc{
-    margin-top: 10px;
-    margin-right: 5px;
-    float: right;
-    font-family: -apple-system, Open Sans, sans-serif;
-    width: calc(100% - 20px - 267px - 10px);
-    height: 100%;
+#cupdesc {
+  margin-top: 10px;
+  margin-right: 5px;
+  float: right;
+  font-family: -apple-system, Open Sans, sans-serif;
+  width: calc(100% - 20px - 267px - 10px);
+  height: 100%;
 }
-.cupd{
-    color: #5D5D6E;
-    font-size: 10px;
+.cupd {
+  color: #5d5d6e;
+  font-size: 10px;
 }
-.cuptime{
-    color: white;
-    font-size: 14px;
+.cuptime {
+  color: white;
+  font-size: 14px;
 }
-.cupgame{
-    color: white;
-    font-size: 12px;
+.cupgame {
+  color: white;
+  font-size: 12px;
 }
-.cupaward{
-    color: #FA963E;
-    font-size: 14px;
+.cupaward {
+  color: #fa963e;
+  font-size: 14px;
 }
-.cupplaces{
-    color: white;
-    font-size: 14px;
+.cupplaces {
+  color: white;
+  font-size: 14px;
 }
-.cupparts{
-    color: white;
-    font-size: 12px;
+.cupparts {
+  color: white;
+  font-size: 12px;
 }
-.sets{
-    min-height: 35px;
-    padding: 10px 20px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    color: white;
-    border-bottom: 1px solid black;
+.sets {
+  min-height: 35px;
+  padding: 10px 20px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1px solid black;
 }
-input[type="radio"]{
-    -webkit-appearance: none;
-    background: transparent;
-    cursor: pointer;
-    float: left;
-    clear: none;
-    margin: 2px 2px 0 2px;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    border: 4px solid #1C2644;
-    background: #1C2644;
-    outline: none;
+input[type="radio"] {
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  float: left;
+  clear: none;
+  margin: 2px 2px 0 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 4px solid #1c2644;
+  background: #1c2644;
+  outline: none;
 }
-input[type="radio"]:checked{
-    background: #52709C;
+input[type="radio"]:checked {
+  background: #52709c;
 }
-#style label{
-    cursor: pointer;
-    float: left;
-    clear: none;
-    padding: 2px 1em 0 0;
-    color: #739FD6;
+#style label {
+  cursor: pointer;
+  float: left;
+  clear: none;
+  padding: 2px 1em 0 0;
+  color: #739fd6;
 }
-input[type=range] {
-    -webkit-appearance: none;
-    width: 80%;
-    background: transparent;
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 80%;
+  background: transparent;
 }
-input[type=range]:focus {
-    outline: none;
+input[type="range"]:focus {
+  outline: none;
 }
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: 4px solid #1C2644;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #52709C;
-    cursor: pointer;
-    margin-top: -7px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 4px solid #1c2644;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #52709c;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    border: 4px solid #1C2644;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #52709C;
-    cursor: pointer;
-    margin-top: -7px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 4px solid #1c2644;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #52709c;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 3px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #367ebd;
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
 }
-input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 3px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
 }
 #val {
-    margin-top: 5px;
+  margin-top: 5px;
 }
-.rub-sign::before{
-    content: "\0020BD";
+.rub-sign::before {
+  content: "\0020BD";
 }
-.icorefresh{
-    cursor: pointer;
-    font-family: icomoon;
-    font-size: 16px;
-    color: white;
+.icorefresh {
+  cursor: pointer;
+  font-family: icomoon;
+  font-size: 16px;
+  color: white;
 }
-.icosearch{
-    margin-left: 7px;
-    font-size: 12px;
+.icosearch {
+  margin-left: 7px;
+  font-size: 12px;
 }
-.icorefresh::before{
-    content: "\ea2e";
+.icorefresh::before {
+  content: "\ea2e";
 }
-.icosearch::before{
-    content: "\e986";
+.icosearch::before {
+  content: "\e986";
 }
-.icoheart::before{
-    content: "\e9da";
+.icoheart::before {
+  content: "\e9da";
 }
-.icostar::before{
-    content: "\e9d9";
+.icostar::before {
+  content: "\e9d9";
 }
-.icocup::before{
-    content: "\e99e";
+.icocup::before {
+  content: "\e99e";
 }
-.icosets::before{
-    content: "\e994";
+.icosets::before {
+  content: "\e994";
 }
-@font-face{
-    font-family: "icomoon";
-    src: url("../font/icomoon.ttf");
-    font-style: normal; 
-    font-weight: normal;
+@font-face {
+  font-family: "icomoon";
+  src: url("../font/icomoon.ttf");
+  font-style: normal;
+  font-weight: normal;
 }
