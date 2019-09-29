@@ -162,9 +162,9 @@ var tops = function(i, pagecount) {
         }
 
         content +=
-          '<a target="_blank" rel="noopener noreferrer" href="' +
-          answertop.streams[i].link +
-          '#autoplay"><div id="stream" name="' +
+          '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/' +
+          answertop.streams[i].key +
+          '/"><div id="stream" name="' +
           answertop.streams[i].streamer +
           '"><img src="http:' +
           answertop.streams[i].preview +
