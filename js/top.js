@@ -163,9 +163,9 @@ var tops = function(i, pagecount) {
 
         content +=
           '<a target="_blank" rel="noopener noreferrer" href="https://goodgame.ru/' +
-          answertop.streams[i].key +
+          answertop.streams[i].streamer.username +
           '/"><div id="stream" name="' +
-          answertop.streams[i].streamer +
+          answertop.streams[i].streamer.username +
           '"><img src="http:' +
           answertop.streams[i].preview +
           '"><div class="text"><div class="channame">' +
