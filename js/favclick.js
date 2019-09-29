@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#nonactive").click(function() {
+  $("#nonactive button").click(function() {
     if ($("#offline").css("display") == "none") {
       $("#offline").show(300);
       $("#nonactive button").text("Скрыть офлайн");
