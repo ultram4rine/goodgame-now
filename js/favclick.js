@@ -1,7 +1,12 @@
 $(document).ready(function() {
   $("#nonactive").click(function() {
-    $("#offline").css("display", "block");
-    $("#nonactive").css("display", "none");
+    if ($("#offline").css("display") == "none") {
+      $("#offline").show(300);
+      $("#nonactive button").text("Скрыть офлайн");
+    } else {
+      $("#offline").hide(300);
+      $("#nonactive button").text("Офлайн");
+    }
   });
 
   $("#fav").click(function() {
