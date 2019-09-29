@@ -1,18 +1,42 @@
 $(document).ready(function() {
-  var pagecount = 0;
-  chrome.runtime.sendMessage(
-    {
-      msg: "page"
-    },
-    function(response) {
-      pagecount = response;
-      var i = 1;
-      tops(i, pagecount);
+  var top = function() {
+    var pagecount = 0;
+    chrome.runtime.sendMessage(
+      {
+        msg: "page"
+      },
+      function(response) {
+        pagecount = response;
+        var i = 1;
+        tops(i, pagecount);
+      }
+    );
+  };
+
+  top();
+
+  $("#refresh").click(function() {
+    var visible = $("#content div:visible");
+
+    $({ deg: 0 }).animate(
+      { deg: 360 },
+      {
+        duration: 200,
+        step: function(now) {
+          $(".icorefresh").css({
+            transform: "rotate(" + now + "deg)"
+          });
+        }
+      }
+    );
+
+    if (visible.attr("id") == "topstreams") {
+      top();
     }
-  );
+  });
 });
 
-function tops(i, pagecount) {
+var tops = function(i, pagecount) {
   prev = $("#prev");
   next = $("#next");
   switch (i) {
@@ -166,7 +190,7 @@ function tops(i, pagecount) {
     }
     wrap.html(content);
   });
-}
+};
 
 String.prototype.replaceAll = function(search, replacement) {
   var target = this;

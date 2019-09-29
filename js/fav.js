@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  (function favs() {
+  var favs = function() {
     var streams = [];
     chrome.runtime.sendMessage(
       {
@@ -178,9 +178,13 @@ $(document).ready(function() {
         }
       }
     });
-  })();
+  };
+
+  favs();
 
   $("#refresh").click(function() {
+    var visible = $("#content div:visible");
+
     $({ deg: 0 }).animate(
       { deg: 360 },
       {
@@ -193,6 +197,8 @@ $(document).ready(function() {
       }
     );
 
-    //favs();
+    if (visible.attr("id") == "favorite") {
+      favs();
+    }
   });
 });
