@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  $("#nonactive button").click(function() {
+  $("#nonactive div").click(function() {
     if ($("#offline").css("display") == "none") {
       $("#offline").show(300);
-      $("#nonactive button").text("Скрыть офлайн");
+      $("#nonactive div").text("Скрыть оффлайн");
     } else {
       $("#offline").hide(300);
-      $("#nonactive button").text("Офлайн");
+      $("#nonactive div").text("Оффлайн");
     }
   });
 

@@ -240,9 +240,10 @@ body {
   color: white;
   text-align: center;
 }
-#nonactive button {
-  width: 70px;
+#nonactive div {
+  display: inline-block;
   height: 35px;
+  line-height: 35px;
   margin-top: 3px;
   cursor: pointer;
   border: 0;
@@ -252,10 +253,10 @@ body {
   background-color: #394466;
   color: #73adff;
 }
-#nonactive button:hover {
+#nonactive div:hover {
   color: #458eff;
 }
-#nonactive button:active {
+#nonactive div:active {
   outline: none;
 }
 #tournaments a {
