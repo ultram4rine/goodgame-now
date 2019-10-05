@@ -245,6 +245,7 @@ body {
   height: 35px;
   line-height: 35px;
   margin-top: 3px;
+  padding: 0 10px;
   cursor: pointer;
   border: 0;
   border-radius: 2px;
