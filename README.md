@@ -1,5 +1,7 @@
 # GoodGame Now
 
+[![License: MIT](https://img.shields.io/github/license/ultram4rine/goodgame-now?color=yellow&style=flat-square)](https://github.com/ultram4rine/goodgame-now/blob/master/LICENSE)
+
 ## Intall
 
 [![Chrome version](https://github.com/ultram4rine/goodgame-now/blob/master/icons/chrome.png)](https://chrome.google.com/webstore/detail/goodgame-now/bhbaamlhleehhffgngjgkpoajnajkkgg)
