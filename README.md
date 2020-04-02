@@ -1,6 +1,6 @@
 # GoodGame Now
 
-[![License: MIT](https://img.shields.io/github/license/ultram4rine/goodgame-now?color=yellow&style=flat-square)](https://github.com/ultram4rine/goodgame-now/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/ultram4rine/goodgame-now?style=flat-square)](https://github.com/ultram4rine/goodgame-now/blob/master/LICENSE)
 
 > [Twitch-Now](https://github.com/Ndragomirov/twitch-now) like extension for GoodGame.ru
 
