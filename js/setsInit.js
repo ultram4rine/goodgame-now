@@ -5,6 +5,6 @@ if (time == null) {
   localStorage.setItem("ggnowtimeupdate", time);
 }
 if (style == null) {
-  style = "twitchnow";
+  style = "goodgame";
   localStorage.setItem("ggnowstyle", style);
 }
