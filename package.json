@@ -19,6 +19,7 @@
     "axios": "^0.19.2"
   },
   "devDependencies": {
+    "eslint": "^7.6.0",
     "web-ext": "^5.0.0"
   }
 }
