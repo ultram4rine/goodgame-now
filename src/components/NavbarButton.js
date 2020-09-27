@@ -8,7 +8,7 @@ class NavbarButton extends PolymerElement {
   static get template() {
     return html`
       <div id="fav" class="lbarcontent">
-        <span class="[[icoheart]]"></span>
+        <span class="[[class]]"></span>
       </div>
     `;
   }
