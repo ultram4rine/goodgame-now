@@ -2,7 +2,7 @@ import { PolymerElement, html } from "@polymer/polymer";
 
 class StreamOffline extends PolymerElement {
   static get properties() {
-    return { link: String, nickname: String, avatar: String };
+    return { link: String, nickname: String, avatar: String, start: String };
   }
 
   static get template() {
@@ -11,6 +11,7 @@ class StreamOffline extends PolymerElement {
         <div name="[[nickname]]" class="inactive">
           <img src="https://static.goodgame.ru[[avatar]]" />
           <div class="nickname">[[nickname]]</div>
+          <div class="start">[[start]]</div>
         </div>
       </a>
     `;
