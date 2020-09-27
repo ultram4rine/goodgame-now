@@ -14,4 +14,4 @@ class NavbarButton extends PolymerElement {
   }
 }
 
-customElements.define("my-element", MyElement);
+customElements.define("navbar-button", NavbarButton);
