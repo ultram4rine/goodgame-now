@@ -1,4 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import minifyHTML from "rollup-plugin-minify-html-literals";
 import copy from "rollup-plugin-copy";
@@ -10,9 +12,8 @@ import {
 const copyConfig = {
   targets: [
     { src: "node_modules/@webcomponents", dest: "dist/node_modules" },
-    { src: "images", dest: "dist" },
-    { src: "data", dest: "dist" },
-    { src: "index.html", dest: "dist" },
+    { src: "src/icons", dest: "dist" },
+    { src: "src/html", dest: "dist" },
   ],
 };
 
@@ -20,7 +21,7 @@ const config = {
   input: "src/manifest.json",
   output: {
     dir: "dist",
-    format: "es",
+    format: "esm",
   },
   plugins: [
     chromeExtension(),
@@ -28,11 +29,10 @@ const config = {
     minifyHTML(),
     copy(copyConfig),
     resolve(),
+    commonjs(),
+    babel({ babelHelpers: "bundled" }),
+    terser(),
   ],
 };
-
-if (process.env.NODE_ENV !== "development") {
-  config.plugins.push(terser());
-}
 
 export default config;

@@ -1,14 +1,5 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "ie": "11"
-        }
-      }
-    ]
-  ],
+  "presets": ["@babel/preset-env"],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     ["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }]
