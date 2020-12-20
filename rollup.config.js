@@ -13,7 +13,7 @@ const copyConfig = {
   targets: [
     { src: "node_modules/@webcomponents", dest: "dist/node_modules" },
     { src: "src/icons", dest: "dist" },
-    { src: "src/html", dest: "dist" },
+    { src: "src/index.html", dest: "dist" },
   ],
 };
 
@@ -27,10 +27,10 @@ const config = {
     chromeExtension(),
     simpleReloader(),
     minifyHTML(),
-    copy(copyConfig),
-    resolve(),
-    commonjs(),
     babel({ babelHelpers: "bundled" }),
+    copy(copyConfig),
+    resolve({ browser: true }),
+    commonjs(),
     terser(),
   ],
 };
