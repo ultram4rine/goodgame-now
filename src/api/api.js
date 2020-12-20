@@ -19,3 +19,20 @@ export const getTopStreamsOnPage = async (page) => {
     console.log(err);
   }
 };
+
+export const getPages = async () => {
+  try {
+    const resp = await axios.get(`${apiEndpoint}/streams`);
+
+    const count = resp.data.queryInfo.qty;
+    const onPage = resp.data.queryInfo.onPage;
+
+    if (count % onPage == 0) {
+      return count / onPage;
+    } else {
+      return Math.trunc(count / onPage + 1);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
