@@ -1,4 +1,5 @@
-import { getFavoriteStreams } from "api";
+import { getFavoriteStreams } from "../api";
+import { countInterval } from "../helpers";
 
 // difference between two arrays.
 const diff = (a1, a2) => {
@@ -15,11 +16,7 @@ const compare = (a1, a2) => {
 let online = [];
 
 (function notify() {
-  const time = localStorage.getItem("ggnowtimeupdate");
-  if (time == null) {
-    time = "5";
-  }
-  const interval = parseInt(time) * 60 * 1000;
+  const interval = countInterval();
 
   let previous = online;
   online = [];
