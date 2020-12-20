@@ -8,7 +8,7 @@
     "scripts": [
       "background/settingsInit.js",
       "background/notify.js",
-      "js/pagecount.js"
+      "background/pages.js"
     ]
   },
   "icons": {
