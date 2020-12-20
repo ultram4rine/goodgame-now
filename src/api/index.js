@@ -1,1 +1,1 @@
-export { getFavoriteStreams, getTopStreamsOnPage } from "./api";
+export { getFavoriteStreams, getTopStreamsOnPage, getPages } from "./api";
