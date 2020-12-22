@@ -22,7 +22,7 @@
     "@babel/polyfill": "^7.12.1",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@webcomponents/webcomponentsjs": "^2.5.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
