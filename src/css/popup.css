@@ -459,9 +459,3 @@ input[type="range"]::-moz-range-track {
 .icosets::before {
   content: "\e994";
 }
-@font-face {
-  font-family: "icomoon";
-  src: url("../fonts/IcoMoon-Free.ttf");
-  font-style: normal;
-  font-weight: normal;
-}
