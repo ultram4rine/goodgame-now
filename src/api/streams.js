@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiEndpoint = "https://goodgame.ru/api/4";
+import { apiEndpoint } from ".";
 
 export const getFavoriteStreams = async () => {
   try {
