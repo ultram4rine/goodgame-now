@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
 
+import "./NavbarButton.js";
+
 @customElement("nav-bar")
 export class NavBar extends LitElement {
   static styles = css`
