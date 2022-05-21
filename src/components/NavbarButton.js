@@ -31,7 +31,7 @@ export class NavbarButton extends LitElement {
   render() {
     return html`
       <div class="navbar-button">
-        <i class="fas fa-${this.icon}"></i>
+        <i class="fa-solid fa-${this.icon}"></i>
       </div>
     `;
   }
