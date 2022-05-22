@@ -48,8 +48,6 @@ export class NavBar extends LitElement {
   }
 
   _clickListener(e) {
-    console.log(e);
     this.active = e.detail.name;
-    console.log(this.active);
   }
 }
