@@ -1,63 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/popup.css" />
-    <link id="style" rel="stylesheet" href="css/gg.css" />
-  </head>
 
-  <body>
-    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module" src="components/NavbarButton.js"></script>
-    <div id="topbar">
-      <div id="refresh"><span class="icorefresh"></span></div>
-      <div id="filter" style="display: none">
-        <span class="icosearch"></span>
-        <input id="search" type="text" />
-      </div>
-      <div id="userbar" style="display: none"></div>
-      <div id="pages" style="display: none">
-        <div id="prev"><</div>
-        <div id="next">></div>
-      </div>
-    </div>
-    <div id="leftbar">
-      <navbar-button icon="heart"></navbar-button>
-      <navbar-button icon="star"></navbar-button>
-      <navbar-button icon="gamepad"></navbar-button>
-      <navbar-button icon="cog"></navbar-button>
-    </div>
-    <div id="content">
-      <div id="favorite" style="display: none">
-        <div id="unauth" style="display: none">
-          Вы не вошли<br /><button id="login">Вход</button>
-        </div>
-        <div id="online" style="display: none"></div>
-        <div id="offline" style="display: none"></div>
-        <div id="nonactive" style="display: block">
-          <div>Оффлайн</div>
-        </div>
-      </div>
-      <div id="topstreams" style="display: none"></div>
-      <div id="tournaments" style="display: none">
-        <div id="open">
-          <div id="opens">Открытые турниры</div>
-        </div>
-      </div>
-      <div id="settings" style="display: none">
-        <div id="style" class="sets">
-          Стиль вкладок<br />
-          <input type="radio" id="twitchnow" name="style" value="twitchnow" />
-          <label for="twitchnow">Twitch Now style</label>
-          <input type="radio" id="goodgame" name="style" value="goodgame" />
-          <label for="goodgame">GoodGame style</label>
-        </div>
-        <div id="time" class="sets">
-          Автообновление через<br />
-          <input type="range" id="slide" min="1" max="60" step="1" value="5" />
-          <span id="val"></span>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/popup.css" />
+  <link id="style" rel="stylesheet" href="css/gg.css" />
+</head>
+
+<body>
+  <span class="icon-heart" aria-hidden="true"></span>
+  <script type="module" src="components/GlobalLoader.js"></script>
+  <script type="module" src="components/TopBar.js"></script>
+  <script type="module" src="components/NavBar.js"></script>
+  <script type="module" src="components/MainContent.js"></script>
+
+  <global-loader state="loading"></global-loader>
+  <top-bar></top-bar>
+  <nav-bar></nav-bar>
+
+  <main-content nav="favorites"></main-content>
+</body>
+
 </html>
