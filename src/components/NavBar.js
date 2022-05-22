@@ -1,10 +1,13 @@
 import { LitElement, html, css } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 
 import "./NavbarButton.js";
 
 @customElement("nav-bar")
 export class NavBar extends LitElement {
+  @property({ type: String })
+  active = "heart";
+
   static styles = css`
     #navbar {
       width: 40px;
@@ -20,11 +23,33 @@ export class NavBar extends LitElement {
   render() {
     return html`
       <div id="navbar">
-        <navbar-button icon="heart"></navbar-button>
-        <navbar-button icon="star"></navbar-button>
-        <navbar-button icon="trophy"></navbar-button>
-        <navbar-button icon="gear"></navbar-button>
+        <navbar-button
+          icon="heart"
+          active=${this.active === "heart" ? true : false}
+          @navclick=${this._clickListener}
+        ></navbar-button>
+        <navbar-button
+          icon="star"
+          active=${this.active === "star" ? true : false}
+          @navclick=${this._clickListener}
+        ></navbar-button>
+        <navbar-button
+          icon="trophy"
+          active=${this.active === "trophy" ? true : false}
+          @navclick=${this._clickListener}
+        ></navbar-button>
+        <navbar-button
+          icon="gear"
+          active=${this.active === "gear" ? true : false}
+          @navclick=${this._clickListener}
+        ></navbar-button>
       </div>
     `;
+  }
+
+  _clickListener(e) {
+    console.log(e);
+    this.active = e.detail.name;
+    console.log(this.active);
   }
 }
