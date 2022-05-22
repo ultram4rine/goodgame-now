@@ -22,8 +22,8 @@ export class NavBar extends LitElement {
       <div id="navbar">
         <navbar-button icon="heart"></navbar-button>
         <navbar-button icon="star"></navbar-button>
-        <navbar-button icon="gamepad"></navbar-button>
-        <navbar-button icon="cog"></navbar-button>
+        <navbar-button icon="trophy"></navbar-button>
+        <navbar-button icon="gear"></navbar-button>
       </div>
     `;
   }

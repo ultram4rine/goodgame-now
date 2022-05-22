@@ -11,6 +11,7 @@ import {
 
 const copyConfig = {
   targets: [
+    { src: "src/fonts", dest: "dist" },
     { src: "src/icons", dest: "dist" },
     { src: "src/index.html", dest: "dist" },
   ],
