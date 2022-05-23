@@ -30,7 +30,7 @@ let online = [];
 
     if (online.length > 0) {
       chrome.browserAction.setBadgeText({ text: online.length.toString() });
-      chrome.browserAction.setBadgeBackgroundColor({ color: "#3B5191" });
+      chrome.browserAction.setBadgeBackgroundColor({ color: "#52709c" });
     } else {
       chrome.browserAction.setBadgeText({ text: "" });
     }
