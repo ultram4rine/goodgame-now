@@ -1,9 +1,9 @@
 <script>
-  import { getFavoriteStreams } from "../api";
+  import { getTopStreamsOnPage } from "../api";
 
   import Stream from "../components/Stream.svelte";
 
-  let streamsPromise = getFavoriteStreams();
+  let streamsPromise = getTopStreamsOnPage(0);
 </script>
 
 {#await streamsPromise then streams}

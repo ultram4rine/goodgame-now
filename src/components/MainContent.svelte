@@ -2,6 +2,9 @@
   import { page } from "../stores/page";
 
   import Favorites from "../pages/Favorites.svelte";
+  import Streams from "../pages/Streams.svelte";
+  import Tournaments from "../pages/Tournaments.svelte";
+  import Settings from "../pages/Settings.svelte";
 
   let currentPage = "favorites";
 
@@ -11,7 +14,15 @@
 </script>
 
 <div id="content">
-  <Favorites />
+  {#if currentPage === "favorites"}
+    <Favorites />
+  {:else if currentPage === "streams"}
+    <Streams />
+  {:else if currentPage === "tournaments"}
+    <Tournaments />
+  {:else if currentPage === "settings"}
+    <Settings />
+  {/if}
 </div>
 
 <style>

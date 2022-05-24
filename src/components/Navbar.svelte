@@ -7,6 +7,8 @@
     faGear,
   } from "@fortawesome/free-solid-svg-icons";
 
+  import { page } from "../stores/page";
+
   let active = "favorites";
   const navs = [
     { name: "favorites", icon: faHeart },
@@ -17,6 +19,7 @@
 
   const changeActiveTab = (nav) => {
     active = nav;
+    page.set(nav);
   };
 </script>
 
