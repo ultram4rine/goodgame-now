@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "GoodGame Now",
+  "version": "1.1.0",
+  "homepage_url": "https://github.com/ultram4rine/goodgame-now",
+  "description": "Track your favorite streamers on GoodGame.ru and get notifications when they come online",
+  "background": {
+    "scripts": [
+      "background/settingsInit.js",
+      "background/notify.js",
+      "background/pages.js"
+    ]
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "64": "icons/64.png",
+    "128": "icons/128.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "webRequest",
+    "background",
+    "storage",
+    "notifications"
+  ]
+}
