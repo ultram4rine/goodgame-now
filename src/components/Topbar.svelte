@@ -2,7 +2,13 @@
   import { onMount } from "svelte";
 
   import Fa from "svelte-fa";
-  import { faSearch, faXmark, faSync } from "@fortawesome/free-solid-svg-icons";
+  import {
+    faSearch,
+    faXmark,
+    faSync,
+    faAngleLeft,
+    faAngleRight,
+  } from "@fortawesome/free-solid-svg-icons";
 
   import { authenticated } from "../stores/auth";
   import { page } from "../stores/page";
@@ -65,9 +71,9 @@
     </div>
   {/if}
   {#if currentPage === "streams"}
-    <div id="pages">
-      <div id="prev">&#60;</div>
-      <div id="next">&#62;</div>
+    <div class="pages-buttons">
+      <div id="prev" class="button disabled"><Fa icon={faAngleLeft} /></div>
+      <div id="next" class="button"><Fa icon={faAngleRight} /></div>
     </div>
   {/if}
 </div>
@@ -163,44 +169,45 @@
     margin-left: 25px;
   }
 
-  #pages {
-    width: 53px;
+  .pages-buttons {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+    width: 58px;
     height: 30px;
     line-height: 30px;
     margin-right: 20px;
     float: right;
-    font-size: 14px;
-    font-family: icomoon;
-    font-size: 18px;
     background-color: #233056;
+  }
+  .pages-buttons .button {
+    cursor: pointer;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    line-height: 27.2px;
+    margin-top: 2.5px;
+    margin-left: 4px;
+    border-radius: 50%;
+    background-color: rgba(79, 88, 119, 0.3);
     color: #73adff;
   }
-  #pages #prev {
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+  .pages-buttons .button#prev {
     float: left;
-    margin-top: 2.5px;
-    border-radius: 50%;
-    background-color: #21273b;
   }
-  #pages #next {
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+  .pages-buttons .button#next {
     float: right;
-    margin-top: 2.5px;
-    border-radius: 50%;
-    background-color: #21273b;
   }
-  #pages .hover {
-    background-color: #2e354c !important;
+  .pages-buttons .button:hover {
+    background-color: rgba(79, 88, 119, 0.5) !important;
     color: #4f98ff !important;
+  }
+  .pages-buttons .button.disabled {
+    background: hsla(0, 0%, 49%, 0.3);
+    color: #acacac;
+  }
+  .pages-buttons .button.disabled:hover {
+    background: hsla(0, 0%, 49%, 0.3) !important;
+    color: #acacac !important;
   }
 </style>
