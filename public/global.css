@@ -1,63 +1,271 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  width: 440px;
+  height: 590px;
+  overflow: hidden;
 }
 
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+#unauth {
+  position: absolute;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-a:hover {
-	text-decoration: underline;
+#unauth button {
+  width: 70px;
+  height: 35px;
+  margin-top: 3px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
 }
-
-a:visited {
-	color: rgb(0,80,160);
+#unauth button:hover {
+  color: #458eff;
 }
-
-label {
-	display: block;
+#unauth button:active {
+  outline: none;
 }
-
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+#nostreams {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1px solid black;
 }
-
-input:disabled {
-	color: #ccc;
+#offline {
+  width: 100%;
 }
-
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
+#offline .inactive {
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: #63a0fa;
 }
-
-button:disabled {
-	color: #999;
+#offline .inactive:hover {
+  background-color: #2e3a58;
 }
-
-button:not(:disabled):active {
-	background-color: #ddd;
+#offline .inactive img {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid rgb(62, 77, 113);
 }
-
-button:focus {
-	border-color: #666;
+#offline .inactive .nickname {
+  width: auto;
+  margin-left: 5px;
+  float: left;
+}
+#offline .inactive .start {
+  margin-right: 10px;
+  float: right;
+  color: #43b85b;
+}
+#nonactive {
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
+}
+#nonactive div {
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 3px;
+  padding: 0 10px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
+}
+#nonactive div:hover {
+  color: #458eff;
+}
+#nonactive div:active {
+  outline: none;
+}
+#tournaments a {
+  text-decoration: none;
+  width: 100%;
+}
+#tournaments #opens {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 22px;
+  color: #b8d5ff;
+}
+#cups {
+  margin-left: 20px;
+  margin-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 267px;
+  height: auto;
+  min-height: 190px;
+  font-family: -apple-system, Open Sans, sans-serif;
+}
+.stripe {
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  margin-left: -10px;
+  margin-top: -15px;
+  width: 327px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px;
+}
+.flag {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  display: block;
+  margin: 0;
+  background: none;
+}
+#cuptitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+}
+#cupdesc {
+  margin-top: 10px;
+  margin-right: 5px;
+  float: right;
+  font-family: -apple-system, Open Sans, sans-serif;
+  width: calc(100% - 20px - 267px - 10px);
+  height: 100%;
+}
+.cupd {
+  color: #5d5d6e;
+  font-size: 10px;
+}
+.cuptime {
+  color: white;
+  font-size: 14px;
+}
+.cupgame {
+  color: white;
+  font-size: 12px;
+}
+.cupaward {
+  color: #fa963e;
+  font-size: 14px;
+}
+.cupplaces {
+  color: white;
+  font-size: 14px;
+}
+.cupparts {
+  color: white;
+  font-size: 12px;
+}
+.sets {
+  min-height: 35px;
+  padding: 10px 20px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1px solid black;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  float: left;
+  clear: none;
+  margin: 2px 2px 0 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 4px solid #1c2644;
+  background: #1c2644;
+  outline: none;
+}
+input[type="radio"]:checked {
+  background: #52709c;
+}
+#style label {
+  cursor: pointer;
+  float: left;
+  clear: none;
+  padding: 2px 1em 0 0;
+  color: #739fd6;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 80%;
+  background: transparent;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 4px solid #1c2644;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #52709c;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 4px solid #1c2644;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #52709c;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+#val {
+  margin-top: 5px;
 }
