@@ -1,5 +1,5 @@
 <script>
-  import { getFavoriteStreams } from "../api";
+  import { getFavoriteStreams } from "../api/streams";
 
   import Stream from "../components/Stream.svelte";
 

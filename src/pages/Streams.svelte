@@ -1,5 +1,5 @@
 <script>
-  import { getTopStreamsOnPage } from "../api";
+  import { getTopStreamsOnPage } from "../api/streams";
 
   import Stream from "../components/Stream.svelte";
 
