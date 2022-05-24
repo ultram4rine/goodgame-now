@@ -1,62 +1,160 @@
-<script></script>
+<script>
+  import { onMount } from "svelte";
 
-<div id="topbar">
-  <div id="refresh"><span class="icorefresh" /></div>
-  <div id="filter" style="display: none">
-    <span class="icosearch" />
-    <input id="search" type="text" />
+  import Fa from "svelte-fa";
+  import { faSearch, faXmark, faSync } from "@fortawesome/free-solid-svg-icons";
+
+  import { page } from "../stores/page";
+
+  import { getUser } from "../api/user";
+
+  let currentPage = "favorites";
+
+  let searchPattern = "";
+  let spin = false;
+  const startSpin = () => {
+    spin = true;
+    window.setTimeout(() => {
+      spin = false;
+    }, 2000);
+  };
+  let user = {};
+
+  page.subscribe((value) => {
+    currentPage = value;
+  });
+
+  onMount(async () => {
+    //user = await getUser();
+  });
+</script>
+
+<div class="topbar ov">
+  {#if currentPage !== "settings"}
+    <div class="search-block ov">
+      <label for="search" class="icon iconsearch"><Fa icon={faSearch} /></label>
+      {#if searchPattern !== ""}
+        <span class="icon iconclose" on:click={() => (searchPattern = "")}>
+          <Fa icon={faXmark} />
+        </span>
+      {/if}
+      <input
+        id="search"
+        class="search-input"
+        type="text"
+        name="query"
+        autocomplete="off"
+        data-lock="0"
+        bind:value={searchPattern}
+      />
+    </div>
+    <div class="refresh" on:click={() => startSpin()}>
+      <Fa icon={faSync} {spin} />
+    </div>
+  {/if}
+  <div class="userbar">
+    <img alt="user-avatar" src="https://static.goodgame.ru{user.avatar}" />
+    <div class="nickname">{user.nickname}</div>
   </div>
-  <div id="userbar" style="display: none" />
-  <div id="pages" style="display: none">
-    <div id="prev">&#60;</div>
-    <div id="next">&#62;</div>
-  </div>
+  {#if currentPage === "streams"}
+    <div id="pages">
+      <div id="prev">&#60;</div>
+      <div id="next">&#62;</div>
+    </div>
+  {/if}
 </div>
 
 <style>
-  #topbar {
+  .topbar {
     position: relative;
     width: 100%;
-    height: 30px;
+    height: 44px;
     background-color: #233056;
     color: #739fd6;
     font-family: -apple-system, Open Sans, sans-serif;
     border-bottom: 1px solid black;
   }
-  #refresh {
-    width: 20px;
+
+  .refresh {
     position: absolute;
-    margin-top: 5px;
-    margin-left: 170px;
+    top: 13.5px;
+    left: 208px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
   }
-  #filter {
-    width: 150px;
-    height: 27px;
-    float: left;
-    margin-left: 10px;
-    font-family: icomoon;
-    color: white;
+
+  .search-block {
+    position: relative;
+    max-width: 200px;
+    margin-top: 4px;
+    margin-left: 4px;
+    z-index: 1;
+  }
+  .search-block .icon {
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+  }
+  .search-block .icon.iconsearch {
+    top: 9px;
+    left: 12px;
+    font-size: 15px;
+  }
+  .search-block .icon.iconclose {
+    top: 7px;
+    right: 14px;
+    font-size: 21px;
+  }
+  .ov {
+    overflow: hidden;
+  }
+  input[type="text"] {
+    display: block;
+    color: #fff;
+    width: 122px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .search-input {
     background-color: #233056;
-    border: 1px solid #233056;
-  }
-  #filter:hover {
-    border: 1px solid rgb(62, 77, 113);
-  }
-  #filter #search {
-    width: 100px;
-    margin-top: 4.5px;
-    border: 0;
-    background-color: #233056;
-    color: white;
-  }
-  #filter #search:focus {
-    background-color: #0d1221;
+    padding: 6px 37px;
     outline: none;
+    border: 2px solid #233056;
   }
-  #filter.focused {
+  .search-input:hover {
+    border-color: #445477;
+  }
+  .search-input:focus {
+    outline: none;
+    border: 2px solid #768ba9;
     background-color: #0d1221;
-    border: 1px solid #768ba9;
   }
+
+  .userbar {
+    vertical-align: middle;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    font-size: 12px;
+    font-family: -apple-system, Open Sans, sans-serif;
+    color: #63a0fa;
+    padding: 1px 0 0 0;
+    margin: -1px auto 0 auto;
+  }
+  .userbar img {
+    margin: 5px 5px 0 0;
+    width: 20px;
+    height: 20px;
+    float: left;
+  }
+  .userbar .nickname {
+    width: 70px;
+    height: 30px;
+    margin-left: 25px;
+  }
+
   #pages {
     width: 53px;
     height: 30px;
@@ -96,28 +194,5 @@
   #pages .hover {
     background-color: #2e354c !important;
     color: #4f98ff !important;
-  }
-  #userbar {
-    vertical-align: middle;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    float: right;
-    font-size: 12px;
-    font-family: -apple-system, Open Sans, sans-serif;
-    color: #63a0fa;
-    padding: 1px 0 0 0;
-    margin: -1px auto 0 auto;
-  }
-  #userbar img {
-    margin: 5px 5px 0 0;
-    width: 20px;
-    height: 20px;
-    float: left;
-  }
-  #uservar #nickname {
-    width: 70px;
-    height: 30px;
-    margin-left: 25px;
   }
 </style>
