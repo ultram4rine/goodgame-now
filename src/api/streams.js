@@ -2,9 +2,13 @@ import axios from "axios";
 
 import { apiEndpoint } from ".";
 
+import { loading } from "../stores/loading";
+
 export const getFavoriteStreams = async () => {
   try {
+    loading.set("loading");
     const resp = await axios.get(`${apiEndpoint}/favorites`);
+    loading.set("loaded");
     return resp.data;
   } catch (err) {
     console.log(err);
@@ -13,7 +17,9 @@ export const getFavoriteStreams = async () => {
 
 export const getTopStreamsOnPage = async (page) => {
   try {
+    loading.set("loading");
     const resp = await axios.get(`${apiEndpoint}/streams?page=${page}`);
+    loading.set("loaded");
     return resp.data.streams;
   } catch (err) {
     console.log(err);
