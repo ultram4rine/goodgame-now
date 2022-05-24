@@ -4,6 +4,7 @@
   import Fa from "svelte-fa";
   import { faSearch, faXmark, faSync } from "@fortawesome/free-solid-svg-icons";
 
+  import { authenticated } from "../stores/auth";
   import { page } from "../stores/page";
 
   import { getUser } from "../api/user";
@@ -25,7 +26,12 @@
   });
 
   onMount(async () => {
-    //user = await getUser();
+    try {
+      user = await getUser();
+      authenticated.set(true);
+    } catch (_err) {
+      authenticated.set(false);
+    }
   });
 </script>
 
@@ -52,10 +58,12 @@
       <Fa icon={faSync} {spin} />
     </div>
   {/if}
-  <div class="userbar">
-    <img alt="user-avatar" src="https://static.goodgame.ru{user.avatar}" />
-    <div class="nickname">{user.nickname}</div>
-  </div>
+  {#if $authenticated}
+    <div class="userbar">
+      <img alt="user-avatar" src="https://static.goodgame.ru{user.avatar}" />
+      <div class="nickname">{user.nickname}</div>
+    </div>
+  {/if}
   {#if currentPage === "streams"}
     <div id="pages">
       <div id="prev">&#60;</div>
