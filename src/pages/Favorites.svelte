@@ -5,6 +5,10 @@
 
   import Stream from "../components/Stream.svelte";
 
+  // TODO: sort favorite streams on:
+  // - online
+  // - retranslating (hosting object if stream)
+  // - offline
   $: streamsPromise = $authenticated
     ? getFavoriteStreams()
     : Promise.resolve([]);
