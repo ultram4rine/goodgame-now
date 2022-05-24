@@ -1,7 +1,7 @@
 <script>
   import { loading } from "../stores/loading";
 
-  let state = "loaded";
+  let state = "";
 
   loading.subscribe((value) => {
     state = value;
@@ -30,8 +30,8 @@
     left: 50%;
   }
 
-  .global-loader.left,
-  .global-loader.right {
+  .global-loader .left,
+  .global-loader .right {
     position: absolute;
     background: #43b85b;
     left: 0;
@@ -40,21 +40,21 @@
     bottom: 0;
   }
 
-  .global-loader.loading.left {
+  .global-loader.loading .left {
     transition: left 2s ease;
     left: 3%;
   }
-  .global-loader.loading.right {
+  .global-loader.loading .right {
     transition: right 2s ease;
     right: 3%;
   }
 
-  .global-loader .loaded .left {
+  .global-loader.loaded .left {
     transition: right 0.5s ease-in 0.3s, left 0.3s ease;
     left: 0;
     right: 100%;
   }
-  .global-loader .loaded .right {
+  .global-loader.loaded .right {
     transition: left 0.5s ease-in 0.3s, right 0.3s ease;
     left: 100%;
     right: 0;
