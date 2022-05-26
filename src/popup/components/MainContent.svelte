@@ -1,5 +1,5 @@
 <script>
-  import { page } from "../stores/page";
+  import { page } from "../../stores/page";
 
   import Favorites from "../pages/Favorites.svelte";
   import Streams from "../pages/Streams.svelte";

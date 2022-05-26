@@ -1,5 +1,5 @@
 <script>
-  import { loading } from "../stores/loading";
+  import { loading } from "../../stores/loading";
 
   let state = "";
 

@@ -1,7 +1,7 @@
 <script>
-  import { getFavoriteStreams } from "../api/streams";
+  import { getFavoriteStreams } from "../../api/streams";
 
-  import { authenticated } from "../stores/auth";
+  import { authenticated } from "../../stores/auth";
 
   import Stream from "../components/Stream.svelte";
 

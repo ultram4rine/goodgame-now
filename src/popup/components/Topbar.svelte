@@ -10,10 +10,10 @@
     faAngleRight,
   } from "@fortawesome/free-solid-svg-icons";
 
-  import { authenticated } from "../stores/auth";
-  import { page } from "../stores/page";
+  import { authenticated } from "../../stores/auth";
+  import { page } from "../../stores/page";
 
-  import { getUser } from "../api/user";
+  import { getUser } from "../../api/user";
 
   let currentPage = "favorites";
 

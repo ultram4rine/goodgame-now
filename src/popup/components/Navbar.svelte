@@ -7,7 +7,7 @@
     faGear,
   } from "@fortawesome/free-solid-svg-icons";
 
-  import { page } from "../stores/page";
+  import { page } from "../../stores/page";
 
   let active = "favorites";
   const navs = [
