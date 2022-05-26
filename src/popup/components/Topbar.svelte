@@ -64,7 +64,7 @@
       <Fa icon={faSync} {spin} />
     </div>
   {/if}
-  {#if $authenticated}
+  {#if $authenticated && currentPage !== "settings"}
     <div class="userbar">
       <img alt="user-avatar" src="https://static.goodgame.ru{user.avatar}" />
       <div class="nickname">{user.nickname}</div>
@@ -146,6 +146,9 @@
   }
 
   .userbar {
+    position: absolute;
+    top: 7px;
+    right: 4px;
     vertical-align: middle;
     width: 100px;
     height: 30px;
@@ -154,8 +157,6 @@
     font-size: 12px;
     font-family: -apple-system, Open Sans, sans-serif;
     color: #63a0fa;
-    padding: 1px 0 0 0;
-    margin: -1px auto 0 auto;
   }
   .userbar img {
     margin: 5px 5px 0 0;
