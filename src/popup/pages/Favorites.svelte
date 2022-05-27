@@ -4,6 +4,7 @@
   import { authenticated } from "../../stores/auth";
 
   import Stream from "../components/Stream.svelte";
+  import StreamOffline from "../components/StreamOffline.svelte";
 
   // TODO: sort favorite streams on:
   // - online
@@ -24,7 +25,11 @@
 {:else}
   {#await streamsPromise then streams}
     {#each streams as stream (stream.id)}
-      <Stream {stream} />
+      {#if stream.online === 1}
+        <Stream {stream} />
+      {:else}
+        <StreamOffline {stream} />
+      {/if}
     {/each}
   {/await}
 {/if}

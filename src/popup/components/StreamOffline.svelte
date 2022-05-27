@@ -9,7 +9,9 @@
       src="https://static.goodgame.ru{stream.streamer.avatar}"
     />
     <div class="nickname">{stream.streamer.nickname}</div>
-    <div class="start">{stream.start}</div>
+    {#if stream.start}
+      <div class="start">{stream.start}</div>
+    {/if}
   </div>
 </a>
 
