@@ -1,0 +1,40 @@
+name: CI/CD
+
+on:
+  push:
+    paths-ignore:
+      - ".github/dependabot.yml"
+      - "screenshots/**"
+      - "*.md"
+      - "LICENSE"
+  pull_request:
+    paths-ignore:
+      - ".github/dependabot.yml"
+      - "screenshots/**"
+      - "*.md"
+      - "LICENSE"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: goodgame-now.chrome
+          path: releases/goodgame-now-*.zip
