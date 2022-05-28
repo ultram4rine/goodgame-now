@@ -35,87 +35,112 @@
   }
 </script>
 
-<a target="_blank" rel="noopener noreferrer" href={stream.link}>
-  <div name={stream.streamer.nickname} class="inactive">
-    <img
-      alt="avatar"
-      src="https://static.goodgame.ru{stream.streamer.avatar}"
-    />
-    {#if stream.hosting === false}
-      <div class="nickname">{stream.streamer.nickname}</div>
-      {#if stream.broadcast !== false}
-        <div class="start">{`${day}${hour}:${minutes}`}</div>
-      {/if}
-    {:else}
-      <span class="streamer-block">
+<div class="stream-info-wrap">
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href={stream.link}
+    class="stream-info-block flex"
+  >
+    <span class="avatar">
+      <img
+        alt="avatar"
+        src="https://static.goodgame.ru{stream.streamer.avatar}"
+      />
+    </span>
+    <span class="streamer-block">
+      {#if stream.hosting !== false}
         <span class="pull-left">
-          <span class="streamer ng-binding">{stream.streamer.nickname}</span>
+          <span class="streamer">{stream.streamer.nickname}</span>
           <img
             alt="lightning"
             src="https://goodgame.ru/images/svg/ic-lightning.svg"
           />
-          <span class="streamer ng-binding"
-            >{stream.hosting.streamer.nickname}</span
-          >
+          <span class="streamer">
+            {stream.hosting.streamer.nickname}
+          </span>
         </span>
-      </span>
-    {/if}
-  </div>
-</a>
+      {:else}
+        <span class="streamer streamer-offline">
+          {stream.streamer.nickname}
+        </span>
+        {#if stream.broadcast !== false}
+          <div class="start">{`${day}${hour}:${minutes}`}</div>
+        {/if}
+      {/if}
+    </span>
+  </a>
+</div>
 
 <style>
-  .streamer-block {
+  .stream-info-wrap {
+    position: relative;
+  }
+  .stream-info-wrap:hover {
+    background-color: #2e3a58;
+  }
+
+  .stream-info-block {
+    position: relative;
+    display: block;
+    padding: 8px 14px;
+    white-space: nowrap;
+    line-height: 22px;
+    color: #dfecff;
+  }
+  .stream-info-block:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .stream-info-block.flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .stream-info-block .avatar {
+    float: left;
+    border-radius: 2px;
+    width: 44px;
+    height: 44px;
+    margin-right: 14px;
+    overflow: hidden;
+    border: 2px solid #768ba9;
+  }
+  .stream-info-block.flex .avatar {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+  .stream-info-block .avatar img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .stream-info-block .streamer-block {
     width: 100%;
     overflow: hidden;
     display: block;
   }
-  .streamer-block .pull-left {
+  .stream-info-block .streamer-block .pull-left {
     width: calc(100% - 80px);
     overflow: hidden;
     text-overflow: ellipsis;
     float: left !important;
   }
-  .streamer {
+  .stream-info-block .streamer {
     margin-right: 3px;
     color: #73adff;
     text-overflow: ellipsis;
   }
-  .streamer-block img {
+  .stream-info-block .streamer.streamer-offline {
+    text-overflow: ellipsis;
+    float: left !important;
+  }
+  .stream-info-block .streamer-block img {
     display: inline-block;
     vertical-align: top;
     margin: 4px 3px 0 0;
-  }
-
-  .inactive {
-    cursor: pointer;
-    width: 100%;
-    height: 55px;
-    line-height: 55px;
-    border-bottom: 1px solid black;
-    text-decoration: none;
-    font-family: -apple-system, Open Sans, sans-serif;
-    font-size: 14px;
-    color: #63a0fa;
-  }
-  .inactive:hover {
-    background-color: #2e3a58;
-  }
-  .inactive img {
-    width: 35px;
-    height: 35px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-    border: 1px solid rgb(62, 77, 113);
-  }
-  .inactive .nickname {
-    width: auto;
-    margin-left: 5px;
-    float: left;
-  }
-  .inactive .start {
-    margin-right: 10px;
-    float: right;
-    color: #43b85b;
   }
 </style>
