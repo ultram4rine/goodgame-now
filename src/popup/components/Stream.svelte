@@ -5,7 +5,13 @@
   export let stream = {};
 </script>
 
-<a target="_blank" rel="noopener noreferrer" href={stream.link}>
+<a
+  target="_blank"
+  rel="noopener noreferrer"
+  href={stream.link
+    ? stream.link
+    : `https://goodgame.ru/channel/${stream.key}/`}
+>
   <div id="stream" name={stream.streamer.nickname}>
     <img alt="preview" src="http:{stream.preview}" />
     <div class="text">
