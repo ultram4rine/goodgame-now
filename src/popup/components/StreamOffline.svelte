@@ -41,14 +41,51 @@
       alt="avatar"
       src="https://static.goodgame.ru{stream.streamer.avatar}"
     />
-    <div class="nickname">{stream.streamer.nickname}</div>
-    {#if stream.broadcast !== false}
-      <div class="start">{`${day}${hour}:${minutes}`}</div>
+    {#if stream.hosting === false}
+      <div class="nickname">{stream.streamer.nickname}</div>
+      {#if stream.broadcast !== false}
+        <div class="start">{`${day}${hour}:${minutes}`}</div>
+      {/if}
+    {:else}
+      <span class="streamer-block">
+        <span class="pull-left">
+          <span class="streamer ng-binding">{stream.streamer.nickname}</span>
+          <img
+            alt="lightning"
+            src="https://goodgame.ru/images/svg/ic-lightning.svg"
+          />
+          <span class="streamer ng-binding"
+            >{stream.hosting.streamer.nickname}</span
+          >
+        </span>
+      </span>
     {/if}
   </div>
 </a>
 
 <style>
+  .streamer-block {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+  .streamer-block .pull-left {
+    width: calc(100% - 80px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left !important;
+  }
+  .streamer {
+    margin-right: 3px;
+    color: #73adff;
+    text-overflow: ellipsis;
+  }
+  .streamer-block img {
+    display: inline-block;
+    vertical-align: top;
+    margin: 4px 3px 0 0;
+  }
+
   .inactive {
     cursor: pointer;
     width: 100%;
