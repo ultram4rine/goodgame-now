@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   import { getFavoriteStreams } from "../../api/streams";
 
   import { authenticated } from "../../stores/auth";
@@ -6,13 +8,26 @@
   import Stream from "../components/Stream.svelte";
   import StreamOffline from "../components/StreamOffline.svelte";
 
-  // TODO: sort favorite streams on:
-  // - online
-  // - retranslating (hosting object if stream)
-  // - offline
-  $: streamsPromise = $authenticated
-    ? getFavoriteStreams()
-    : Promise.resolve([]);
+  let online = [];
+  let retranslating = [];
+  let soon = [];
+  let offline = [];
+
+  onMount(async () => {
+    let streams = await getFavoriteStreams();
+
+    online = streams.filter((s) => s.online === 1); // Filter online streams.
+    streams = streams.filter((s) => !(s.online === 1)); // Reverse filter to remove from all streams.
+
+    retranslating = streams.filter((s) => s.hosting !== false);
+    streams = streams.filter((s) => !(s.hosting !== false));
+
+    soon = streams.filter((s) => s.broadcast !== false);
+    streams = streams.filter((s) => !(s.broadcast !== false));
+
+    offline = streams.filter((s) => s.online === 0);
+    streams = streams.filter((s) => !(s.online === 0));
+  });
 </script>
 
 {#if !$authenticated}
@@ -23,15 +38,41 @@
     </a>
   </div>
 {:else}
-  {#await streamsPromise then streams}
-    {#each streams as stream (stream.id)}
-      {#if stream.online === 1}
+  {#if online.length > 0}
+    <div class="streams-wrapper">
+      <div class="title">Каналы онлайн</div>
+      {#each online as stream (stream.id)}
         <Stream {stream} />
-      {:else}
+      {/each}
+    </div>
+  {/if}
+
+  {#if retranslating.length > 0}
+    <div class="streams-wrapper">
+      <div class="title">Ретрансляции</div>
+      {#each retranslating as stream (stream.id)}
+        <Stream {stream} />
+      {/each}
+    </div>
+  {/if}
+
+  {#if soon.length > 0}
+    <div class="streams-wrapper">
+      <div class="title">Скоро в эфире</div>
+      {#each soon as stream (stream.id)}
+        <Stream {stream} />
+      {/each}
+    </div>
+  {/if}
+
+  {#if offline.length > 0}
+    <div class="streams-wrapper">
+      <div class="title">Офлайн</div>
+      {#each offline as stream (stream.id)}
         <StreamOffline {stream} />
-      {/if}
-    {/each}
-  {/await}
+      {/each}
+    </div>
+  {/if}
 {/if}
 
 <style>
@@ -61,5 +102,15 @@
   }
   #unauth button:active {
     outline: none;
+  }
+
+  .streams-wrapper {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  .title {
+    font-size: 18px;
+    margin: 0 14px 5px;
+    color: #dfecff;
   }
 </style>
