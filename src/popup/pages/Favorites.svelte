@@ -51,7 +51,7 @@
     <div class="streams-wrapper">
       <div class="title">Ретрансляции</div>
       {#each retranslating as stream (stream.id)}
-        <Stream {stream} />
+        <StreamOffline {stream} />
       {/each}
     </div>
   {/if}
@@ -60,7 +60,7 @@
     <div class="streams-wrapper">
       <div class="title">Скоро в эфире</div>
       {#each soon as stream (stream.id)}
-        <Stream {stream} />
+        <StreamOffline {stream} />
       {/each}
     </div>
   {/if}
