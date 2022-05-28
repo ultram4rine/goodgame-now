@@ -35,7 +35,7 @@
   }
 </script>
 
-<a target="_blank" rel="noopener noreferrer" href={stream.start}>
+<a target="_blank" rel="noopener noreferrer" href={stream.link}>
   <div name={stream.streamer.nickname} class="inactive">
     <img
       alt="avatar"
