@@ -17,6 +17,7 @@
     let streams = await getFavoriteStreams();
 
     online = streams.filter((s) => s.online === 1); // Filter online streams.
+    online.sort((a, b) => b.viewers - a.viewers); // Sort by viewers.
     streams = streams.filter((s) => !(s.online === 1)); // Reverse filter to remove from all streams.
 
     retranslating = streams.filter((s) => s.hosting !== false);
@@ -26,6 +27,20 @@
     streams = streams.filter((s) => !(s.broadcast !== false));
 
     offline = streams.filter((s) => s.online === 0);
+    offline.sort((a, b) => {
+      // Sort by last_online. If equal, compare by nicknames.
+      if (a.last_online < b.last_online) {
+        return 1;
+      } else if (a.last_online > b.last_online) {
+        return -1;
+      } else {
+        if (a.streamer.nickname < b.streamer.nickname) {
+          return 1;
+        } else {
+          return -1;
+        }
+      }
+    });
     streams = streams.filter((s) => !(s.online === 0));
   });
 </script>
