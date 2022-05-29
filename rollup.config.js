@@ -1,38 +1,48 @@
-import resolve from "@rollup/plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
-import babel from "@rollup/plugin-babel";
+import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
-import minifyHTML from "rollup-plugin-minify-html-literals";
-import copy from "rollup-plugin-copy";
 import {
   chromeExtension,
   simpleReloader,
 } from "rollup-plugin-chrome-extension";
+import { emptyDir } from "rollup-plugin-empty-dir";
+import zip from "rollup-plugin-zip";
+import css from "rollup-plugin-css-only";
+import json from "@rollup/plugin-json";
 
-const copyConfig = {
-  targets: [
-    { src: "src/fonts", dest: "dist" },
-    { src: "src/icons", dest: "dist" },
-    { src: "src/index.html", dest: "dist" },
-  ],
-};
+const production = !process.env.ROLLUP_WATCH;
 
-const config = {
+export default {
   input: "src/manifest.json",
   output: {
     dir: "dist",
     format: "esm",
   },
   plugins: [
+    // always put chromeExtension() before other plugins
     chromeExtension(),
     simpleReloader(),
-    minifyHTML(),
-    babel({ babelHelpers: "inline" }),
-    copy(copyConfig),
-    resolve({ browser: true }),
+    svelte({
+      compilerOptions: {
+        // enable run-time checks when not in production
+        dev: !production,
+      },
+    }),
+    css({ output: "popup/bundle.css" }),
+    // the plugins below are optional
+    resolve({
+      browser: true,
+      dedupe: ["svelte"],
+    }),
+    // https://github.com/rollup/plugins/tree/master/packages/commonjs
+    json(),
     commonjs(),
-    terser(),
+    // Empties the output dir before a new build
+    emptyDir(),
+    // If we're building for production, minify
+    production && terser(),
+    // Outputs a zip file in ./releases
+    production && zip({ dir: "releases" }),
   ],
 };
-
-export default config;

@@ -1,0 +1,196 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 440px;
+  height: 578px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, Open Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  background-color: #0d1221;
+  color: #fff;
+  font-size: 14px;
+}
+
+#unauth {
+  position: absolute;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#unauth button {
+  width: 70px;
+  height: 35px;
+  margin-top: 3px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
+}
+#unauth button:hover {
+  color: #458eff;
+}
+#unauth button:active {
+  outline: none;
+}
+#nostreams {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1px solid black;
+}
+#offline {
+  width: 100%;
+}
+#offline .inactive {
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: #63a0fa;
+}
+#offline .inactive:hover {
+  background-color: #2e3a58;
+}
+#offline .inactive img {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid rgb(62, 77, 113);
+}
+#offline .inactive .nickname {
+  width: auto;
+  margin-left: 5px;
+  float: left;
+}
+#offline .inactive .start {
+  margin-right: 10px;
+  float: right;
+  color: #43b85b;
+}
+#nonactive {
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  color: white;
+  text-align: center;
+}
+#nonactive div {
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 3px;
+  padding: 0 10px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  background-color: #394466;
+  color: #73adff;
+}
+#nonactive div:hover {
+  color: #458eff;
+}
+#nonactive div:active {
+  outline: none;
+}
+#tournaments a {
+  text-decoration: none;
+  width: 100%;
+}
+#tournaments #opens {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 22px;
+  color: #b8d5ff;
+}
+#cups {
+  margin-left: 20px;
+  margin-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 267px;
+  height: auto;
+  min-height: 190px;
+  font-family: -apple-system, Open Sans, sans-serif;
+}
+.stripe {
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  margin-left: -10px;
+  margin-top: -15px;
+  width: 327px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px;
+}
+.flag {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  display: block;
+  margin: 0;
+  background: none;
+}
+#cuptitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: -apple-system, Open Sans, sans-serif;
+  font-size: 14px;
+  color: white;
+}
+#cupdesc {
+  margin-top: 10px;
+  margin-right: 5px;
+  float: right;
+  font-family: -apple-system, Open Sans, sans-serif;
+  width: calc(100% - 20px - 267px - 10px);
+  height: 100%;
+}
+.cupd {
+  color: #5d5d6e;
+  font-size: 10px;
+}
+.cuptime {
+  color: white;
+  font-size: 14px;
+}
+.cupgame {
+  color: white;
+  font-size: 12px;
+}
+.cupaward {
+  color: #fa963e;
+  font-size: 14px;
+}
+.cupplaces {
+  color: white;
+  font-size: 14px;
+}
+.cupparts {
+  color: white;
+  font-size: 12px;
+}

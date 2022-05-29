@@ -1,4 +1,4 @@
-import { getFavoriteStreams } from "../api";
+import { getFavoriteStreams } from "../api/streams";
 import { countInterval } from "../helpers";
 
 // difference between two arrays.
