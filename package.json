@@ -16,7 +16,7 @@
     "eslint": "^8.16.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "rollup": "^2.75.2",
-    "rollup-plugin-chrome-extension": "^3.6.9",
+    "rollup-plugin-chrome-extension": "^3.6.10",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-empty-dir": "^1.0.5",
